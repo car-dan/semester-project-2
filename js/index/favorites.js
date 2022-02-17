@@ -1,5 +1,6 @@
 import { baseUrl } from "../settings/api.js";
 import displayMessage from "../common/displayMessage.js";
+import { getUserName } from "../utils/storage.js";
 
 const productsUrl = baseUrl + "/" + "products";
 
@@ -11,7 +12,13 @@ export async function favorites() {
 		const json = await respons.json();
 		container.innerHTML = "";
 
-		console.log(json);
+		const username = getUserName();
+		let authLink = "detail.html?id=";
+
+		if (username) {
+			authLink = "edit.html?id=";
+		}
+
 		json.forEach(function (favorite) {
 			if (favorite.featured) {
 				const imgUrl = baseUrl + favorite.image.formats.thumbnail.url;
@@ -22,7 +29,7 @@ export async function favorites() {
   					<div class="card-body">
     					<h5 class="card-title">${favorite.title}</h5>
     					<p class="card-text">${favorite.price}</p>
-    					<a href="detail.html?id=${favorite.id}" class="btn btn-primary">Go somewhere</a>
+    					<a href="${authLink}${favorite.id}" class="btn btn-primary">Go somewhere</a>
   					</div>
 				</div>
                      `;

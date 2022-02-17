@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Add</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu-container"></div>
+
+			<h1>Add Product</h1>
+
+			<form>
+				<div class="message-container"></div>
+
+				<div>
+					<label for="title">Title</label>
+					<input id="title" />
+				</div>
+				<div>
+					<label for="description">description</label>
+					<input id="description" />
+				</div>
+				<div>
+					<label for="price">price</label>
+					<input id="price" />
+				</div>
+				<div>
+					<input type="file" id="avatar" name="avatar"
+                    accept="image/jpg, image/png" />
+				</div>
+                <img src="" class="preview" height="200" alt="Image preview.."/>
+				<button>Add</button>
+			</form>
+		</div>
+
+		<script src="js/add.js" type="module"></script>
+	</body>
+</html>

@@ -1,5 +1,9 @@
 import displayMessage from "./common/displayMessage.js";
 import { baseUrl } from "./settings/api.js";
+import { saveToken, saveUser } from "./utils/storage.js";
+import createMenu from "./common/createMenu.js";
+
+createMenu();
 
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
@@ -40,15 +44,20 @@ async function doLogin(username, password) {
 		const respons = await fetch(url, options);
 		const json = await respons.json();
 
+		console.log(json);
+
 		if (json.user) {
 			displayMessage("succsess", "Loggd inn", ".message-container");
+
+			saveToken(json.jwt);
+			saveUser(json.user);
+
+			location.href = "/";
 		}
 
 		if (json.error) {
 			displayMessage("warning", "Invalid login details", ".message-container");
 		}
-
-		console.log(json);
 	} catch (error) {
 		console.log(error);
 	}

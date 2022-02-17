@@ -1,4 +1,7 @@
 import { baseUrl } from "./settings/api.js";
+import createMenu from "./common/createMenu.js";
+
+createMenu();
 
 const queryString = document.location.search;
 

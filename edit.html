@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>edit</title>
+	</head>
+	<body>
+		<div class="menu-container"></div>
+		<div class="container">
+			<h1>Edit product</h1>
+			<div class="loading">loading product....</div>
+			<form class="edit-form">
+				<div class="message-container"></div>
+
+				<div>
+					<label for="title">Title</label>
+					<input id="title" />
+				</div>
+				<div>
+					<label for="price">Price</label>
+					<input id="price" />
+				</div>
+				<div>
+					<label for="description">Description</label>
+					<input id="description" />
+				</div>
+
+				<div>
+					<label for="imageUrl">Image Url</label>
+					<input id="imageUrl" />
+				</div>
+
+				<input id="id" type="hidden" />
+
+				<div>
+					<button id="update">Update</button>
+				</div>
+
+                <hr>
+
+                <div class="delete-container">
+                    
+                </div>
+			</form>
+		</div>
+		<script src="js/edit.js" type="module"></script>
+	</body>
+</html>
