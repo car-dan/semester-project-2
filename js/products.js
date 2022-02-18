@@ -14,6 +14,8 @@ const productsUrl = baseUrl + "/products";
 		const respons = await fetch(productsUrl);
 		const json = await respons.json();
 
+		console.log(json);
+
 		renderProducts(json);
 		searchProducts(json);
 		addToCart(json);

@@ -2,6 +2,7 @@ import createMenu from "./common/createMenu.js";
 import displayMessage from "./common/displayMessage.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
+import { addImage } from "./addPage/image.js";
 
 const token = getToken();
 
@@ -10,50 +11,13 @@ if (!token) {
 }
 
 createMenu();
-
-//image loading move to anoter file
-
-const fileInput = document.querySelector(`input[type="file"]`);
-const preview = document.querySelector(`img.preview`);
-const reader = new FileReader();
-
-function handleEvent(e) {
-	if (e.type === "load") {
-		preview.src = reader.result;
-	}
-}
-
-function addListeners(reader) {
-	reader.addEventListener("loadstart", handleEvent);
-	reader.addEventListener("load", handleEvent);
-	reader.addEventListener("loadendt", handleEvent);
-	reader.addEventListener("progress", handleEvent);
-	reader.addEventListener("error", handleEvent);
-	reader.addEventListener("abort", handleEvent);
-}
-
-function handleSelected(e) {
-	const selectedFile = fileInput.files[0];
-	console.log(selectedFile);
-	if (selectedFile) {
-		addListeners(reader);
-		reader.readAsDataURL(selectedFile);
-	}
-}
-
-console.log(fileInput);
-
-fileInput.addEventListener("change", handleSelected);
-
-//image load end
+addImage();
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
-
-console.log(reader);
 
 form.addEventListener("submit", submitForm);
 
