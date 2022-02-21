@@ -2,7 +2,6 @@ import createMenu from "./common/createMenu.js";
 import displayMessage from "./common/displayMessage.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
-import { addImage } from "./addPage/image.js";
 
 const token = getToken();
 
@@ -11,13 +10,46 @@ if (!token) {
 }
 
 createMenu();
-addImage();
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
+const fileInput = document.querySelector("#image");
+let newImage;
+
+const previewContainer = document.querySelector("#displayImage");
+const previewImage = document.querySelector(".image-preview__image");
+const previewDefaultText = document.querySelector(
+	".image-preview__defult-text"
+);
+
+fileInput.addEventListener("change", function () {
+	const file = fileInput.files[0];
+	console.log(file);
+
+	if (file) {
+		const reader = new FileReader();
+
+		previewDefaultText.style.display = "none";
+		previewImage.style.display = "block";
+
+		reader.addEventListener("load", function () {
+			console.log(this);
+			previewImage.setAttribute("src", this.result);
+			newImage = reader.result;
+			console.log(newImage);
+			return newImage;
+		});
+
+		reader.readAsDataURL(file);
+	} else {
+		previewDefaultText.style.display = null;
+		previewImage.style.display = null;
+		previewImage.setAttribute("src", "");
+	}
+});
 
 form.addEventListener("submit", submitForm);
 
@@ -29,9 +61,6 @@ function submitForm(e) {
 	const titleValue = title.value.trim();
 	const priceValue = parseFloat(price.value);
 	const descriptionValue = description.value.trim();
-	// const image = new FormData();
-
-	// FormData.append("image", fileInput.files[0]);
 
 	if (
 		titleValue.lenght === 0 ||
@@ -47,6 +76,9 @@ function submitForm(e) {
 
 async function addProduct(title, price, description) {
 	const url = baseUrl + "/products";
+	const formData = new FormData();
+
+	formData.append(`files`, fileInput.files[0]);
 
 	const data = JSON.stringify({
 		title: title,
@@ -57,6 +89,7 @@ async function addProduct(title, price, description) {
 	const options = {
 		method: "POST",
 		body: data,
+		formData: formData,
 		headers: {
 			"Content-Type": "application/json",
 			Authorization: `Bearer ${token}`,

@@ -5,24 +5,40 @@ import displayMessage from "./common/displayMessage.js";
 const token = getToken();
 
 const formElement = document.querySelector("form");
+const inpFile = document.querySelector(".image");
+
+inpFile.addEventListener("change", loadFile);
+
+function loadFile(e) {
+	const files = e.target.files;
+	console.log(files);
+}
 
 formElement.addEventListener("submit", (e) => {
 	e.preventDefault();
+	const files = e.target.files;
+	console.log(files);
+	const formData = new FormData();
 
-	addProduct(formElement);
+	formData.append(`files`, files[0]);
 });
 
-async function addProduct(file) {
-	const url = baseUrl + "/api/upload";
-	const data = JSON.stringify({ image: file });
+async function addProduct(data) {
+	const url = baseUrl + "/upload";
+	const newData = data;
+	// const data = JSON.stringify({
+	// 	"files.image": {
+	// 		file: file,
+	// 		content_type: "image/jpeg",
+	// 	},
+	// });
 	// const data = JSON.stringify({
 	// 	image: file,
 	// });
 	const options = {
 		method: "POST",
-		body: data,
+		body: files.newData,
 		headers: {
-			"Content-Type": "application/json",
 			Authorization: `Bearer ${token}`,
 		},
 	};

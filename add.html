@@ -29,12 +29,20 @@
 					<input id="price" />
 				</div>
 				<div>
-					<input type="file" id="avatar" name="avatar"
-                    accept="image/jpg, image/png" />
+					<input
+						type="file"
+						id="image"
+						name="image"
+						accept="image/jpg, image/jpeg, image/png"
+					/>
 				</div>
-                <img src="" class="preview" height="200" alt="Image preview.."/>
+
 				<button>Add</button>
 			</form>
+			<div id="dipslayImage">
+				<img src="" alt="Image Preview" class="image-preview__image" />
+				<span class="image-preview__defult-text">Image Preview</span>
+			</div>
 		</div>
 
 		<script src="js/add.js" type="module"></script>

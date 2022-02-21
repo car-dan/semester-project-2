@@ -79,6 +79,19 @@
   width: 40%;
 }
 
+#dipslayImage {
+  width: 375px;
+  height: 211px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-preview__image {
+  display: none;
+  width: 100%;
+}
+
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
