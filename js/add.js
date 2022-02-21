@@ -27,7 +27,6 @@ const previewDefaultText = document.querySelector(
 
 fileInput.addEventListener("change", function () {
 	const file = fileInput.files[0];
-	console.log(file);
 
 	if (file) {
 		const reader = new FileReader();
@@ -70,15 +69,18 @@ function submitForm(e) {
 	) {
 		return displayMessage("warning", "please emty", ".message-container");
 	}
+	console.log(titleValue);
+	console.log(priceValue);
+	console.log(descriptionValue);
 
 	addProduct(titleValue, priceValue, descriptionValue);
 }
 
 async function addProduct(title, price, description) {
 	const url = baseUrl + "/products";
-	const formData = new FormData();
-
-	formData.append(`files`, fileInput.files[0]);
+	console.log(title);
+	console.log(price);
+	console.log(description);
 
 	const data = JSON.stringify({
 		title: title,
@@ -89,7 +91,6 @@ async function addProduct(title, price, description) {
 	const options = {
 		method: "POST",
 		body: data,
-		formData: formData,
 		headers: {
 			"Content-Type": "application/json",
 			Authorization: `Bearer ${token}`,
@@ -101,6 +102,7 @@ async function addProduct(title, price, description) {
 		const json = await respons.json();
 
 		if (json.created_at) {
+			console.log(json);
 			displayMessage("sucsess", "Product created", ".message-container");
 			form.reset();
 		}

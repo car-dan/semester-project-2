@@ -4,40 +4,33 @@ import displayMessage from "./common/displayMessage.js";
 
 const token = getToken();
 
-const formElement = document.querySelector("form");
-const inpFile = document.querySelector(".image");
+const inpFile = document.querySelector("#image");
+const formData = new FormData();
+
+const title = document.querySelector("#title");
 
 inpFile.addEventListener("change", loadFile);
 
 function loadFile(e) {
-	const files = e.target.files;
-	console.log(files);
+	console.log(inpFile.files[0]);
+	console.log(title.value.trim());
+	formData.append("files", inpFile.files[0]);
+	formData.append("alternativeText", "test, test");
+	formData.append("alternativeText", "test, test");
+
+	formData.append(`data`, JSON.stringify(title.value));
+	formData.append("ref", "products");
+	formData.append("refId", 53);
+	formData.append("field", "image");
+	addProduct(formData);
 }
 
-formElement.addEventListener("submit", (e) => {
-	e.preventDefault();
-	const files = e.target.files;
-	console.log(files);
-	const formData = new FormData();
+async function addProduct(formData) {
+	const url = baseUrl + "/upload/";
 
-	formData.append(`files`, files[0]);
-});
-
-async function addProduct(data) {
-	const url = baseUrl + "/upload";
-	const newData = data;
-	// const data = JSON.stringify({
-	// 	"files.image": {
-	// 		file: file,
-	// 		content_type: "image/jpeg",
-	// 	},
-	// });
-	// const data = JSON.stringify({
-	// 	image: file,
-	// });
 	const options = {
 		method: "POST",
-		body: files.newData,
+		body: formData,
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
