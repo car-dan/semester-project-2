@@ -2,6 +2,7 @@ import createMenu from "./common/createMenu.js";
 import displayMessage from "./common/displayMessage.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
+import { addImage } from "./addImage.js";
 
 const token = getToken();
 
@@ -101,9 +102,15 @@ async function addProduct(title, price, description) {
 		const respons = await fetch(url, options);
 		const json = await respons.json();
 
+		const file = fileInput.files[0];
+
 		if (json.created_at) {
 			console.log(json);
 			displayMessage("sucsess", "Product created", ".message-container");
+
+			if (file) {
+				addImage(file, json);
+			}
 			form.reset();
 		}
 

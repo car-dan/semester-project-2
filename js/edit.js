@@ -3,6 +3,8 @@ import { baseUrl } from "./settings/api.js";
 import displayMessage from "./common/displayMessage.js";
 import { getToken } from "./utils/storage.js";
 import deleteButton from "./index/products/deleteButton.js";
+import { addImage } from "./addImage.js";
+import { deleteImage } from "./delete/deleteImage.js";
 
 const token = getToken();
 
@@ -28,25 +30,57 @@ const form = document.querySelector("form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
-const imageUrl = document.querySelector("#imageUrl");
+
 const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
 const loading = document.querySelector(".loading");
+const exsistingImg = document.querySelector(".exsistingImg");
+const featured = document.querySelector(".featured");
+const featuredSlider = document.querySelector(".featured span");
+console.log(featured);
+
+featured.addEventListener("click", toggleFeatured);
+
+function toggleFeatured(e) {
+	featuredSlider.classList.toggle("active");
+}
 
 (async function () {
 	try {
 		const respons = await fetch(productUrl);
 		const details = await respons.json();
+		console.log(details);
 
-		title.value = details.title;
-		price.value = details.price;
-		description.value = details.description;
-		imageUrl.value = details.url;
 		idInput.value = details.id;
 
-		deleteButton(details.id);
+		if (details.title) {
+			title.value = details.title;
+		} else {
+			title.value = "";
+		}
+		if (details.price) {
+			price.value = details.price;
+		} else {
+			price.value = 0;
+		}
+		if (details.description) {
+			description.value = details.description;
+		} else {
+			description.value = "";
+		}
+		if (
+			details.image.formats.thumbnail.url ||
+			details.image.formats.thumbnail.url === "null"
+		) {
+			const imageUrl = baseUrl + details.image.formats.thumbnail.url;
+			exsistingImg.src = imageUrl;
+		}
 
-		console.log(details);
+		if (details.featured || details.featured === "null") {
+			featuredSlider.classList.add("active");
+		}
+
+		deleteButton(details.id);
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -66,6 +100,13 @@ function submitForm(e) {
 	const priceValue = parseFloat(price.value);
 	const descriptionValue = description.value.trim();
 	const idValue = idInput.value;
+	let featuredValue;
+
+	if (featuredSlider.classList.contains("active")) {
+		featuredValue = true;
+	} else {
+		featuredValue = false;
+	}
 
 	console.log("priceValue", priceValue);
 
@@ -81,15 +122,23 @@ function submitForm(e) {
 			".message-container"
 		);
 	}
-	updateProduct(titleValue, priceValue, descriptionValue, idValue);
+	updateProduct(
+		titleValue,
+		priceValue,
+		descriptionValue,
+		idValue,
+		featuredValue
+	);
 }
 
-async function updateProduct(title, price, description, id) {
+async function updateProduct(title, price, description, id, featured) {
 	const url = baseUrl + "/products/" + id;
+	console.log(featured);
 	const data = JSON.stringify({
 		title: title,
 		price: price,
 		description: description,
+		featured: featured,
 	});
 
 	const options = {
@@ -103,10 +152,17 @@ async function updateProduct(title, price, description, id) {
 	try {
 		const respons = await fetch(url, options);
 		const json = await respons.json();
-		console.log(json);
+
+		const fileInput = document.querySelector("#image");
+		const file = fileInput.files[0];
+		console.log(json.image.id);
 
 		if (json.updatet_at) {
 			displayMessage("sucsess", "Product updated", ".message-container");
+			if (file) {
+				deleteImage(json.image.id);
+				// addImage(file, json);
+			}
 		}
 
 		if (json.error) {

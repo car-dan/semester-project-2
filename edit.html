@@ -27,10 +27,19 @@
 					<label for="description">Description</label>
 					<input id="description" />
 				</div>
+				<div>
+					<button class="featured">
+						<span class=""></span>
+					</button>
+				</div>
 
 				<div>
-					<label for="imageUrl">Image Url</label>
-					<input id="imageUrl" />
+					<input
+						type="file"
+						id="image"
+						name="image"
+						accept="image/jpg, image/jpeg, image/png"
+					/>
 				</div>
 
 				<input id="id" type="hidden" />
@@ -39,11 +48,13 @@
 					<button id="update">Update</button>
 				</div>
 
-                <hr>
+				<div>
+					<img src="" alt="exsistingImg" class="exsistingImg" />
+				</div>
 
-                <div class="delete-container">
-                    
-                </div>
+				<hr />
+
+				<div class="delete-container"></div>
 			</form>
 		</div>
 		<script src="js/edit.js" type="module"></script>
