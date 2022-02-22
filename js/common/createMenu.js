@@ -2,7 +2,7 @@ import { getUserName } from "../utils/storage.js";
 import logoutButton from "./logoutButton.js";
 
 export default function createMenu() {
-	const container = document.querySelector(".menu-container");
+	const container = document.querySelector(".menu-container nav");
 
 	const { pathname } = document.location;
 	const username = getUserName();
@@ -18,17 +18,18 @@ export default function createMenu() {
         <button id= "logout">Logout ${username}</button>`;
 	}
 
-	container.innerHTML = `<div class= "menu">
-                            <a href= "/" class = "${
-															pathname === "/" || pathname === "/index.html"
-																? "active"
-																: ""
-														}">Home</a>
-							<a href= "details.html"  class = "${
-								pathname === "/detail.html?" ? "active" : ""
-							}">Details</a>
-							${authLink}
-                            </div>`;
+	container.innerHTML = `<ul><li><a href= "/" class = "${
+		pathname === "/" || pathname === "/index.html" ? "active" : ""
+	}">Home</a></li>
+                            <li><a href= "products.html"  class = "${
+															pathname === "/products.html?" ? "active" : ""
+														}">Products</a></li>
+							<li>${authLink}</li>
+							</ul>
+							
+							
+							
+                            `;
 
 	logoutButton();
 }

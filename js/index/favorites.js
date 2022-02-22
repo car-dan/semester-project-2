@@ -11,6 +11,7 @@ export async function favorites() {
 		const respons = await fetch(productsUrl);
 		const json = await respons.json();
 		container.innerHTML = "";
+		console.log(json);
 
 		const username = getUserName();
 		let authLink = "detail.html?id=";
@@ -23,19 +24,25 @@ export async function favorites() {
 			if (favorite.featured) {
 				let imgUrl;
 				if (favorite.image) {
-					imgUrl = baseUrl + favorite.image.formats.thumbnail.url;
+					imgUrl = baseUrl + favorite.image.formats.small.url;
 				} else {
 					imgUrl = "";
 				}
 
 				container.innerHTML += `
-				<div class="favorite" style="width: 18rem;">
-  					<img src="${imgUrl}" class="card-img-top" alt="">
-  					<div class="card-body">
-    					<h5 class="card-title">${favorite.title}</h5>
-    					<p class="card-text">${favorite.price}</p>
-    					<a href="${authLink}${favorite.id}" class="btn btn-primary">Go somewhere</a>
-  					</div>
+				<div class="favorite">
+					<a href="${authLink}${favorite.id}" class="btn btn-primary">
+						<div class="favorite-inner">
+							<div class="favorite-front">
+								<img src="${imgUrl}" class="card-img-top" alt="">
+							</div>
+							<div class="favorite-back">
+								<h5 class="card-title">${favorite.title}</h5>
+    							<p class="card-text">${favorite.price}$</p>
+							</div>
+						</div>
+					</a>
+  					
 				</div>
                      `;
 			}

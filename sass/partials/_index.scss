@@ -1,21 +1,23 @@
 .container {
-	width: 90%;
+	width: 100%;
+	min-height: 80vh;
 }
 .banner-container {
 	width: 100%;
 	height: 60vh;
 	margin: 0 auto;
-	background-color: red;
 	overflow: hidden;
 
 	& img {
-		width: 100%;
-		height: 100%;
+		filter: contrast(150%);
 		object-fit: cover;
+
+		// object-position: 0px -250px;
+		// filter: sepia(30%) contrast(180%) brightness(70%) hue-rotate(40deg);
+		width: 100%;
 	}
 }
 
 .active {
 	color: red;
 }
-
