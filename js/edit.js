@@ -37,7 +37,7 @@ const loading = document.querySelector(".loading");
 const exsistingImg = document.querySelector(".exsistingImg");
 const featured = document.querySelector(".featured");
 const featuredSlider = document.querySelector(".featured span");
-console.log(featured);
+const uploadImage = document.querySelector(".uploadImage");
 
 featured.addEventListener("click", toggleFeatured);
 
@@ -68,12 +68,15 @@ function toggleFeatured(e) {
 		} else {
 			description.value = "";
 		}
-		if (
-			details.image.formats.thumbnail.url ||
-			details.image.formats.thumbnail.url === "null"
-		) {
+		if (details.image) {
 			const imageUrl = baseUrl + details.image.formats.thumbnail.url;
 			exsistingImg.src = imageUrl;
+			uploadImage.style.display = "none";
+			deleteImage(details.image.id);
+		} else {
+			uploadImage.style.display = "block";
+			const addImage = document.querySelector(".add-imgContainer");
+			addImage.innerHTML = `<button class="addImage">Add Image</button>`;
 		}
 
 		if (details.featured || details.featured === "null") {
@@ -131,6 +134,15 @@ function submitForm(e) {
 	);
 }
 
+const addImageButton = document.querySelector(".addImage");
+if (addImageButton) {
+	const file = document.querySelector("#image").files[0];
+	const id = document.querySelector(".")
+	addImageImageButton.addEventListener("click", addImage(file, ));
+}
+
+
+
 async function updateProduct(title, price, description, id, featured) {
 	const url = baseUrl + "/products/" + id;
 	console.log(featured);
@@ -159,10 +171,6 @@ async function updateProduct(title, price, description, id, featured) {
 
 		if (json.updatet_at) {
 			displayMessage("sucsess", "Product updated", ".message-container");
-			if (file) {
-				deleteImage(json.image.id);
-				// addImage(file, json);
-			}
 		}
 
 		if (json.error) {

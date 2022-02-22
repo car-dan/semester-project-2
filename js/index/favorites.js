@@ -21,11 +21,16 @@ export async function favorites() {
 
 		json.forEach(function (favorite) {
 			if (favorite.featured) {
-				const imgUrl = baseUrl + favorite.image.formats.thumbnail.url;
+				let imgUrl;
+				if (favorite.image) {
+					imgUrl = baseUrl + favorite.image.formats.thumbnail.url;
+				} else {
+					imgUrl = "";
+				}
 
 				container.innerHTML += `
 				<div class="favorite" style="width: 18rem;">
-  					<img src="${imgUrl}" class="card-img-top" alt="${favorite.image.alternativeText}">
+  					<img src="${imgUrl}" class="card-img-top" alt="">
   					<div class="card-body">
     					<h5 class="card-title">${favorite.title}</h5>
     					<p class="card-text">${favorite.price}</p>
