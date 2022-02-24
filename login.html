@@ -4,27 +4,42 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://kit.fontawesome.com/dddd75c97e.js"
+			crossorigin="anonymous"
+		></script>
 		<link rel="stylesheet" href="css/style.css" />
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="menu-container"></div>
-		<div class="container">
-			<h1>Login</h1>
-
-			<form>
-				<div class="message-container"></div>
-				<div>
-					<label for="username">Username/email</label>
-					<input id="username" />
-				</div>
-				<div>
-					<label for="password">Password</label>
-					<input id="password" type="password" />
-				</div>
-				<button>Submit</button>
-			</form>
-		</div>
+		<nav>
+			<div class="hamburger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+			<div class="logo">
+				<a href="index.html"><img src="/logo/1x/Artboard 1.png" alt="" /> </a>
+			</div>
+			<div class="links"></div>
+		</nav>
+		<section class="container">
+			<div>
+				<form class="logInForm">
+					<h1>Login</h1>
+					<div class="message-container"></div>
+					<div>
+						<label for="username">Username/email</label>
+						<input id="username" />
+					</div>
+					<div>
+						<label for="password">Password</label>
+						<input id="password" type="password" />
+					</div>
+					<button>Submit</button>
+				</form>
+			</div>
+		</section>
 		<script src="js/login.js" type="module"></script>
 	</body>
 </html>

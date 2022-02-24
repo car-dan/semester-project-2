@@ -18,9 +18,11 @@ const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
 const fileInput = document.querySelector("#image");
+const altText = document.querySelector("#altText");
 let newImage;
 
 const previewContainer = document.querySelector("#displayImage");
+console.log(previewContainer);
 const previewImage = document.querySelector(".image-preview__image");
 const previewDefaultText = document.querySelector(
 	".image-preview__defult-text"
@@ -33,20 +35,18 @@ fileInput.addEventListener("change", function () {
 		const reader = new FileReader();
 
 		previewDefaultText.style.display = "none";
-		previewImage.style.display = "block";
+		previewContainer.style.display = "block";
 
 		reader.addEventListener("load", function () {
-			console.log(this);
 			previewImage.setAttribute("src", this.result);
 			newImage = reader.result;
-			console.log(newImage);
 			return newImage;
 		});
 
 		reader.readAsDataURL(file);
 	} else {
 		previewDefaultText.style.display = null;
-		previewImage.style.display = null;
+		previewContainer.style.display = null;
 		previewImage.setAttribute("src", "");
 	}
 });
@@ -61,27 +61,27 @@ function submitForm(e) {
 	const titleValue = title.value.trim();
 	const priceValue = parseFloat(price.value);
 	const descriptionValue = description.value.trim();
+	const altTextValue = altText.value.trim();
 
 	if (
 		titleValue.lenght === 0 ||
 		priceValue.length === 0 ||
 		isNaN(priceValue) ||
-		descriptionValue.lenght === 0
+		descriptionValue.lenght === 0 ||
+		altTextValue.lenght === 0
 	) {
-		return displayMessage("warning", "please emty", ".message-container");
+		return displayMessage(
+			"warning",
+			"Please input valid information",
+			".message-container"
+		);
 	}
-	console.log(titleValue);
-	console.log(priceValue);
-	console.log(descriptionValue);
 
-	addProduct(titleValue, priceValue, descriptionValue);
+	addProduct(titleValue, priceValue, descriptionValue, altTextValue);
 }
 
-async function addProduct(title, price, description) {
+async function addProduct(title, price, description, altText) {
 	const url = baseUrl + "/products";
-	console.log(title);
-	console.log(price);
-	console.log(description);
 
 	const data = JSON.stringify({
 		title: title,
@@ -109,7 +109,7 @@ async function addProduct(title, price, description) {
 			displayMessage("sucsess", "Product created", ".message-container");
 
 			if (file) {
-				addImage(file, json);
+				addImage(file, json, altText);
 			}
 			form.reset();
 		}

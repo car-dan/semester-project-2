@@ -14,6 +14,7 @@ function handleClick() {
 	const name = this.dataset.name;
 	const price = this.dataset.price;
 	const items = this.dataset.number;
+	const image = this.dataset.image;
 
 	// console.log("id", id);
 	// console.log("name", name);
@@ -25,7 +26,13 @@ function handleClick() {
 	});
 
 	if (productExsist === undefined) {
-		const product = { id: id, name: name, price: price, items: items };
+		const product = {
+			id: id,
+			name: name,
+			price: price,
+			items: items,
+			image: image,
+		};
 		cart.push(product);
 		saveToStorage("cart", cart);
 	} else {
@@ -40,7 +47,13 @@ function handleClick() {
 
 		const newCart = cart.filter((cart) => cart.id !== id);
 
-		const product = { id: id, name: name, price: price, items: newItems };
+		const product = {
+			id: id,
+			name: name,
+			price: price,
+			items: newItems,
+			image: image,
+		};
 
 		newCart.push(product);
 		saveToStorage("cart", newCart);

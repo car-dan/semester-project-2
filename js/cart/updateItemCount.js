@@ -2,8 +2,8 @@ import { getFromStorage, saveToStorage } from "../utils/storage.js";
 import { renderCart } from "./renderCart.js";
 
 export function updateItemCount(product) {
-	const upButton = document.querySelectorAll(".fa-arrow-up");
-	const downButton = document.querySelectorAll(".fa-arrow-down");
+	const upButton = document.querySelectorAll(".fa-plus");
+	const downButton = document.querySelectorAll(".fa-minus");
 
 	upButton.forEach((button) => {
 		button.addEventListener("click", handleChange);
@@ -19,6 +19,7 @@ function handleChange() {
 	const name = this.dataset.name;
 	const price = this.dataset.price;
 	const items = this.dataset.items;
+	const image = this.dataset.image;
 
 	const cart = getFromStorage("cart");
 
@@ -30,7 +31,7 @@ function handleChange() {
 
 	let newCount;
 
-	if (this.className === "fa-solid fa-arrow-up") {
+	if (this.className === "fa-solid fa-plus") {
 		if (oldProduct[0].items < 100) {
 			newCount = parseFloat(oldProduct[0].items) + 1;
 		} else {
@@ -49,7 +50,13 @@ function handleChange() {
 	}
 
 	const newCart = cart.filter((cart) => cart.id !== id);
-	const product = { id: id, name: name, price: price, items: newCount };
+	const product = {
+		id: id,
+		name: name,
+		price: price,
+		items: newCount,
+		image: image,
+	};
 
 	newCart.push(product);
 	saveToStorage("cart", newCart);

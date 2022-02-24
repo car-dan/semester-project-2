@@ -1,5 +1,6 @@
 import { baseUrl } from "../../settings/api.js";
 import { getToken } from "../../utils/storage.js";
+import displayMessage from "../../common/displayMessage.js";
 
 export default function deleteButton(id) {
 	const container = document.querySelector(".delete-container");
@@ -9,9 +10,7 @@ export default function deleteButton(id) {
 	const button = document.querySelector("button.delete");
 
 	button.onclick = async function () {
-		console.log(id);
-
-		const doDelete = confirm("Are you sure you want to delete this?");
+		const doDelete = confirm("Are you sure you want to delete this product?");
 
 		if (doDelete) {
 			const url = baseUrl + "/products/" + id;
@@ -29,10 +28,17 @@ export default function deleteButton(id) {
 			try {
 				const respons = await fetch(url, options);
 				const json = await respons.json();
-				location.href = "/";
-				console.log(json);
+
+				if (json) {
+					displayMessage("sucsess", "Product deleted", ".message-container");
+					setTimeout(function () {
+						location.href = "/";
+					}, 1500);
+				} else {
+					displayMessage("error", "an error ocurred", ".message-container");
+				}
 			} catch (error) {
-				console.log(error);
+				displayMessage("error", "an error ocurred", ".message-container");
 			}
 		}
 	};

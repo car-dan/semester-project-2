@@ -1,5 +1,6 @@
 import { baseUrl } from "../settings/api.js";
 import { getToken } from "../utils/storage.js";
+import displayMessage from "../common/displayMessage.js";
 
 export function deleteImage(id) {
 	const container = document.querySelector(".delete-imgContainer");
@@ -27,10 +28,16 @@ export function deleteImage(id) {
 			try {
 				const respons = await fetch(url, options);
 				const json = await respons.json();
-
-				console.log(json);
+				if (json) {
+					displayMessage("sucsess", "Image deleted", ".message-container");
+					setTimeout(function () {
+						location.reload();
+					}, 1500);
+				} else {
+					displayMessage("error", "an error ocurred", ".message-container");
+				}
 			} catch (error) {
-				console.log(error);
+				displayMessage("error", "an error ocurred", ".message-container");
 			}
 		}
 	};

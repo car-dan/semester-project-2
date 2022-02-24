@@ -5,7 +5,17 @@
 @import "partials/menu";
 @import "partials/logo";
 @import "partials/favorites";
+@import "partials/products";
+@import "partials/details";
+@import "partials/cart";
+@import "partials/logIn";
+@import "partials/editProduct";
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

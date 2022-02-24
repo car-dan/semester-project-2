@@ -1,0 +1,54 @@
+.edit-form {
+	margin: 40px auto;
+	width: 90%;
+
+	.preview {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+		}
+	}
+
+	.delete-imgContainer {
+		margin-left: 10px;
+	}
+}
+
+.featured {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	border-radius: 34px;
+}
+
+.featured span {
+	position: absolute;
+	cursor: pointer;
+	background-color: #ccc;
+	top: 2px;
+	bottom: 2px;
+	left: 4px;
+	right: 0;
+	bottom: 0;
+	content: "";
+	height: 26px;
+	width: 26px;
+
+	background-color: white;
+
+	transition: 0.4s;
+	border-radius: 34px;
+}
+
+.featured span.active {
+	background-color: #2196f3;
+	transform: translateX(26px);
+	transition: 0.4s;
+	box-shadow: 0 0 1px #2196f3;
+}

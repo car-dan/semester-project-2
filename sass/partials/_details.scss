@@ -1,0 +1,51 @@
+.detail-container {
+	width: 80%;
+	margin: 20px auto;
+
+	@media only screen and(min-width: 700px) {
+		display: flex;
+		height: 70vh;
+	}
+}
+
+.detail-img {
+	width: 100%;
+	height: 40vh;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	@media only screen and(min-width: 700px) {
+		height: 100%;
+		min-width: 50%;
+	}
+}
+
+.detail-infoPrice {
+	margin-top: 20px;
+
+	button {
+		width: 100%;
+		padding: 1rem;
+	}
+}
+
+.detail-info {
+	max-width: 100%;
+	overflow: hidden;
+}
+
+@media only screen and(min-width: 700px) {
+	.detail-info {
+		height: 100%;
+		padding-left: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: space-between;
+		overflow: hidden;
+	}
+}

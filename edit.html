@@ -4,11 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://kit.fontawesome.com/dddd75c97e.js"
+			crossorigin="anonymous"
+		></script>
 		<link rel="stylesheet" href="css/style.css" />
 		<title>edit</title>
 	</head>
 	<body>
-		<div class="menu-container"></div>
+		<nav>
+			<div class="hamburger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+			<div class="logo">
+				<a href="index.html"><img src="/logo/1x/Artboard 1.png" alt="" /> </a>
+			</div>
+			<div class="links"></div>
+		</nav>
 		<div class="container">
 			<h1>Edit product</h1>
 			<div class="loading">loading product....</div>
@@ -27,10 +41,13 @@
 					<label for="description">Description</label>
 					<input id="description" />
 				</div>
+				<div class="preview">
+					<img src="" alt="" class="exsistingImg" />
+					<div class="delete-imgContainer"></div>
+				</div>
 				<div>
-					<button class="featured">
-						<span class="default"></span>
-					</button>
+					<label for="altText">Alt text</label>
+					<input type="text" id="altText" />
 				</div>
 
 				<div class="uploadImage" style="display: none">
@@ -44,18 +61,17 @@
 
 				<input id="id" type="hidden" />
 
+				<hr />
+				<div>
+					<button class="featured">
+						<span class="default"></span>
+					</button>
+				</div>
 				<div>
 					<button id="update">Update</button>
 				</div>
-
-				<div>
-					<img src="" alt="exsistingImg" class="exsistingImg" />
-				</div>
-
-				<hr />
-
 				<div class="delete-container"></div>
-				<div class="delete-imgContainer"></div>
+
 				<div class="add-imgContainer"></div>
 			</form>
 		</div>
