@@ -24,7 +24,7 @@ const productUrl = baseUrl + "/products/" + id;
 		document.title = detail.title;
 
 		const container = document.querySelector(".detail-container");
-		const imgUrl = baseUrl + detail.image.formats.small.url;
+		const imgUrl = detail.image.formats.small.url;
 
 		container.innerHTML = `
 							<div class="detail-img">

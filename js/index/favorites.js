@@ -24,7 +24,7 @@ export async function favorites() {
 			if (favorite.featured) {
 				let imgUrl;
 				if (favorite.image) {
-					imgUrl = baseUrl + favorite.image.formats.small.url;
+					imgUrl = favorite.image.formats.small.url;
 				} else {
 					imgUrl = "";
 				}

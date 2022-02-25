@@ -2,7 +2,8 @@ import createMenu from "./common/createMenu.js";
 import displayMessage from "./common/displayMessage.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
-import { addImage } from "./addImage.js";
+import { renderFile } from "./utils/renderFile.js";
+import { checkSubmit } from "./utils/checkSubmit.js";
 
 const token = getToken();
 
@@ -19,39 +20,16 @@ const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
 const fileInput = document.querySelector("#image");
 const altText = document.querySelector("#altText");
-let newImage;
+const featured = document.querySelector(".featured");
 
-const previewContainer = document.querySelector("#displayImage");
-console.log(previewContainer);
-const previewImage = document.querySelector(".image-preview__image");
-const previewDefaultText = document.querySelector(
-	".image-preview__defult-text"
-);
-
-fileInput.addEventListener("change", function () {
-	const file = fileInput.files[0];
-
-	if (file) {
-		const reader = new FileReader();
-
-		previewDefaultText.style.display = "none";
-		previewContainer.style.display = "block";
-
-		reader.addEventListener("load", function () {
-			previewImage.setAttribute("src", this.result);
-			newImage = reader.result;
-			return newImage;
-		});
-
-		reader.readAsDataURL(file);
-	} else {
-		previewDefaultText.style.display = null;
-		previewContainer.style.display = null;
-		previewImage.setAttribute("src", "");
-	}
-});
+fileInput.addEventListener("change", renderFile);
 
 form.addEventListener("submit", submitForm);
+
+featured.addEventListener("click", (e) => {
+	e.preventDefault();
+	document.querySelector(".featured span").classList.toggle("active");
+});
 
 function submitForm(e) {
 	e.preventDefault();
@@ -62,13 +40,23 @@ function submitForm(e) {
 	const priceValue = parseFloat(price.value);
 	const descriptionValue = description.value.trim();
 	const altTextValue = altText.value.trim();
+	const file = fileInput.files[0];
+	const featuredSlider = document.querySelector(".featured span");
+	let featuredValue;
+
+	if (featuredSlider.classList.contains("active")) {
+		featuredValue = true;
+	} else {
+		featuredValue = false;
+	}
 
 	if (
 		titleValue.lenght === 0 ||
 		priceValue.length === 0 ||
 		isNaN(priceValue) ||
 		descriptionValue.lenght === 0 ||
-		altTextValue.lenght === 0
+		altTextValue.lenght === 0 ||
+		!file
 	) {
 		return displayMessage(
 			"warning",
@@ -77,23 +65,34 @@ function submitForm(e) {
 		);
 	}
 
-	addProduct(titleValue, priceValue, descriptionValue, altTextValue);
+	addProduct(
+		titleValue,
+		priceValue,
+		descriptionValue,
+		altTextValue,
+		file,
+		featuredValue
+	);
 }
 
-async function addProduct(title, price, description, altText) {
+async function addProduct(title, price, description, altText, file, featured) {
 	const url = baseUrl + "/products";
+	const formData = new FormData();
+	formData.append("files.image", file, altText);
 
-	const data = JSON.stringify({
+	const data = {
 		title: title,
 		price: price,
 		description: description,
-	});
+		featured: featured,
+	};
+
+	formData.append("data", JSON.stringify(data));
 
 	const options = {
 		method: "POST",
-		body: data,
+		body: formData,
 		headers: {
-			"Content-Type": "application/json",
 			Authorization: `Bearer ${token}`,
 		},
 	};
@@ -102,16 +101,12 @@ async function addProduct(title, price, description, altText) {
 		const respons = await fetch(url, options);
 		const json = await respons.json();
 
-		const file = fileInput.files[0];
-
 		if (json.created_at) {
 			console.log(json);
 			displayMessage("sucsess", "Product created", ".message-container");
-
-			if (file) {
-				addImage(file, json, altText);
-			}
-			form.reset();
+			setTimeout(function () {
+				location.reload();
+			}, 1000);
 		}
 
 		if (json.error) {

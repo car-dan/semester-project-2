@@ -17,7 +17,7 @@ export function renderProducts(products) {
 	products.forEach(function (product) {
 		let imgUrl;
 		if (product.image) {
-			imgUrl = baseUrl + product.image.formats.small.url;
+			imgUrl = product.image.formats.small.url;
 		} else {
 			imgUrl = "";
 		}

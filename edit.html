@@ -31,26 +31,30 @@
 
 				<div>
 					<label for="title">Title</label>
-					<input id="title" />
+					<input type="text" id="title" />
+				</div>
+
+				<div>
+					<label for="description">Description</label>
+					<input type="textarea" id="description" />
 				</div>
 				<div>
 					<label for="price">Price</label>
-					<input id="price" />
+					<input type="number" id="price" />
 				</div>
 				<div>
-					<label for="description">Description</label>
-					<input id="description" />
+					<button class="featured">
+						<span class="default"></span>
+					</button>
 				</div>
-				<div class="preview">
-					<img src="" alt="" class="exsistingImg" />
-					<div class="delete-imgContainer"></div>
-				</div>
+				<hr />
+
 				<div>
 					<label for="altText">Alt text</label>
 					<input type="text" id="altText" />
 				</div>
 
-				<div class="uploadImage" style="display: none">
+				<div class="uploadImage">
 					<input
 						type="file"
 						id="image"
@@ -58,21 +62,19 @@
 						accept="image/jpg, image/jpeg, image/png"
 					/>
 				</div>
+				<div class="preview">
+					<img src="" alt="" class="exsistingImg" />
+					<div class="delete-imgContainer"></div>
+				</div>
 
 				<input id="id" type="hidden" />
 
 				<hr />
-				<div>
-					<button class="featured">
-						<span class="default"></span>
-					</button>
-				</div>
+
 				<div>
 					<button id="update">Update</button>
 				</div>
 				<div class="delete-container"></div>
-
-				<div class="add-imgContainer"></div>
 			</form>
 		</div>
 		<script src="js/edit.js" type="module"></script>

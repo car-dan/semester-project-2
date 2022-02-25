@@ -14,7 +14,7 @@ export function renderCart(cart) {
 	if (cart && cart.length) {
 		cart.forEach(function (product) {
 			const productlink = "detail.html?id=" + product.id;
-			const imageUrl = baseUrl + `${product.image}`;
+			const imageUrl = `${product.image}`;
 			const productsPrice = parseFloat(`${product.price}`);
 			const items = parseFloat(`${product.items}`);
 			const itemsPrice = productsPrice * items;

@@ -21,7 +21,7 @@
 		</nav>
 		<div class="container">
 			<h1>Add Product</h1>
-
+			<div class="loading">loading product....</div>
 			<form class="add-form">
 				<div class="message-container"></div>
 
@@ -29,6 +29,7 @@
 					<label for="title">Title</label>
 					<input type="text" id="title" />
 				</div>
+
 				<div>
 					<label for="description">Description</label>
 					<input type="textarea" id="description" />
@@ -38,6 +39,13 @@
 					<input type="number" id="price" />
 				</div>
 				<div>
+					<button class="featured">
+						<span class="default"></span>
+					</button>
+				</div>
+				<hr />
+
+				<div class="uploadImage">
 					<input
 						type="file"
 						id="image"
@@ -49,10 +57,10 @@
 					<label for="altText">Alt text</label>
 					<input type="text" id="altText" />
 				</div>
-				<div id="displayImage" style="display: none">
-					<img src="" alt="Image Preview" class="image-preview__image" />
-					<span class="image-preview__defult-text">Image Preview</span>
+				<div class="preview">
+					<img src="" alt="" class="exsistingImg" />
 				</div>
+				<hr />
 
 				<button>Add</button>
 			</form>

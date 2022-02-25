@@ -11,9 +11,10 @@ export async function banner() {
 	try {
 		const respons = await fetch(bannerUrl);
 		const json = await respons.json();
+		console.log(json.hero_banner.formats.medium.url);
 
-		const bannerImg = json.hero_banner.formats.large.url;
-		const bannerImgUrl = baseUrl + bannerImg;
+		const bannerImg = json.hero_banner.formats.medium.url;
+		const bannerImgUrl = bannerImg;
 
 		bannerContainer.innerHTML = `
 		 <img src ="${bannerImgUrl}" alt ="${json.hero_banner_alt_text}";><img>`;

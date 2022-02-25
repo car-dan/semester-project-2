@@ -632,12 +632,14 @@ nav {
   background: #394d61;
 }
 
-.edit-form {
+.edit-form,
+.add-form {
   margin: 40px auto;
   width: 90%;
 }
 
-.edit-form .preview {
+.edit-form .preview,
+.add-form .preview {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -649,14 +651,16 @@ nav {
           align-items: center;
 }
 
-.edit-form .preview img {
+.edit-form .preview img,
+.add-form .preview img {
   width: 150px;
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.edit-form .delete-imgContainer {
+.edit-form .delete-imgContainer,
+.add-form .delete-imgContainer {
   margin-left: 10px;
 }
 
