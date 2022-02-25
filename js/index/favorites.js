@@ -11,7 +11,6 @@ export async function favorites() {
 		const respons = await fetch(productsUrl);
 		const json = await respons.json();
 		container.innerHTML = "";
-		console.log(json);
 
 		const username = getUserName();
 		let authLink = "detail.html?id=";
