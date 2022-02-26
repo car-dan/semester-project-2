@@ -13,8 +13,8 @@ export async function banner() {
 		loader.innerHTML = "";
 		const respons = await fetch(bannerUrl);
 		const json = await respons.json();
-
-		const bannerImg = json.hero_banner.formats.medium.url;
+		console.log(json.hero_banner);
+		const bannerImg = json.hero_banner.formats.large.url;
 		const bannerImgUrl = bannerImg;
 
 		bannerContainer.innerHTML = `

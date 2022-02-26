@@ -1,8 +1,7 @@
 import { getUserName } from "./storage.js";
-import { baseUrl } from "../settings/api.js";
 
 export function renderProducts(products) {
-	const container = document.querySelector(".products-container");
+	const container = document.querySelector(".products");
 	const username = getUserName();
 
 	console.log(products);

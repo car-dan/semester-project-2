@@ -2,7 +2,7 @@ import { renderProducts } from "./renderProducts.js";
 
 export function searchProducts(products) {
 	const search = document.querySelector(".search");
-	const container = document.querySelector(".products-container");
+	const container = document.querySelector(".products");
 
 	search.onkeyup = function (e) {
 		const searchValue = e.target.value.trim().toLowerCase();

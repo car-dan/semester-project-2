@@ -10,7 +10,7 @@
 	background-color: transparent;
 	width: 100%;
 	height: 200px;
-	border: 1px solid #f1f1f1;
+	border: 1px solid $color-thirtiary;
 	perspective: 1000px;
 
 	@media only screen and (min-width: 550px) {
@@ -57,12 +57,19 @@
 }
 
 .favorite-front {
-	background-color: #bbb;
+	background-color: $color-grey;
 	color: black;
 }
 
 .favorite-back {
-	background-color: dodgerblue;
-	color: white;
+	background-color: $color-primary;
+	color: $color-secundary;
 	transform: rotateX(180deg);
+	padding: 100px 0;
+
+	h5,
+	p {
+		font-family: $font-secondary;
+		font-size: 2rem;
+	}
 }

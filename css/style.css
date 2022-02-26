@@ -1,6 +1,6 @@
 .container {
-  width: 90%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 10vh auto;
 }
 
 .banner-container {
@@ -35,10 +35,23 @@ body {
 }
 
 nav {
-  background-color: #e9e9e9;
+  position: relative;
+  background-color: #262626;
+  font-family: mrs-eaves-roman-lining, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
   width: 100vw;
-  height: 15vh;
+  height: 20vh;
   padding: 2px 0;
+}
+
+nav a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.main-nav {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +64,7 @@ nav {
 }
 
 .logo {
-  height: 100%;
+  height: 10vh;
   width: 30%;
   padding-left: 5px;
 }
@@ -63,43 +76,74 @@ nav {
      object-fit: contain;
 }
 
-.links {
-  width: 50%;
+.main-links {
+  text-align: center;
+  padding-right: 40px;
+  color: #f2f2f2;
+}
+
+.main-links .user,
+.main-links .logOut {
+  font-size: 0.8rem;
+}
+
+.main-links button {
+  background: transparent;
+  color: #f2f2f2;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.main-links .nav-cart {
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.main-links .nav-cart span {
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 9px;
+  background-color: #e27d60;
+  color: #262626;
+  font-size: 15px;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
 }
 
 .nav-links {
+  height: 10vh;
+  line-height: 10vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.nav-links ul {
+  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  height: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: auto;
 }
 
 .nav-links a {
   text-decoration: none;
+  color: #262626;
+  font-family: mrs-eaves, serif;
+  font-size: 700;
+  font-size: 1.8rem;
 }
 
-.nav-links ul {
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 50%;
-}
-
-.nav-links button {
-  border: none;
+.nav-links .active {
+  -webkit-text-decoration: underline solid #e27d60 3px;
+          text-decoration: underline solid #e27d60 3px;
 }
 
 .hamburger {
@@ -110,13 +154,10 @@ nav {
   width: 25px;
   height: 3px;
   margin: 5px;
-  background-color: black;
+  background-color: #f2f2f2;
 }
 
 @media screen and (max-width: 768px) {
-  .links {
-    width: 15%;
-  }
   html {
     overflow-x: hidden;
   }
@@ -125,24 +166,14 @@ nav {
     position: relative;
     width: 100%;
   }
-  .nav-links ul {
-    width: 100%;
-  }
-  .hamburgerLinks {
+  .nav-links {
     z-index: 2;
     position: absolute;
     left: 0px;
     width: 100vw;
     height: 85vh;
-    top: 15vh;
-    background-color: green;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    top: 10vh;
+    background-color: #f2f2f2;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
     -webkit-transition: -webkit-transform 0.5s ease-in;
@@ -150,12 +181,18 @@ nav {
     transition: transform 0.5s ease-in;
     transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
-  .hamburgerLinks li {
-    color: white;
-    opacity: 0;
+  .nav-links ul {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .hamburgerLinks a {
-    color: white;
+  .nav-links a {
+    color: #262626;
   }
   .hamburger {
     display: block;
@@ -217,7 +254,7 @@ nav {
   background-color: transparent;
   width: 100%;
   height: 200px;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #f2f2f2;
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }
@@ -277,29 +314,46 @@ nav {
 }
 
 .favorite-front {
-  background-color: #bbb;
+  background-color: #a6a6a6;
   color: black;
 }
 
 .favorite-back {
-  background-color: dodgerblue;
-  color: white;
+  background-color: #262626;
+  color: #e27d60;
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
+  padding: 100px 0;
 }
 
-.search {
-  padding: 1rem 0.5rem;
-  width: 100%;
-  border: 1px solid black;
+.favorite-back h5,
+.favorite-back p {
+  font-family: mrs-eaves-roman-lining, sans-serif;
+  font-size: 2rem;
 }
 
 .products-container {
   width: 100%;
+  margin: 10vh auto;
+}
+
+.search {
+  display: block;
+  width: 80%;
+  margin: 0px auto;
+  padding: 1rem 0.5rem;
+  border: 1px solid black;
+}
+
+.products {
+  width: 80%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -444,11 +498,6 @@ nav {
 .cart-container {
   width: 90%;
   margin: 0 auto;
-}
-
-.cart-container a {
-  text-decoration: none;
-  color: black;
 }
 
 .cart-item {
@@ -701,14 +750,18 @@ nav {
 }
 
 footer {
-  background-color: black;
+  background-color: #f2f2f2;
   margin-top: 40px;
 }
 
 .footerContainer {
-  color: whitesmoke;
-  border: 2px solid green;
+  color: #e27d60;
   padding-top: 40px;
+}
+
+.footerContainer a {
+  color: #e27d60;
+  text-decoration: none;
 }
 
 .mediaLinks {
@@ -761,19 +814,11 @@ footer {
 .copyright {
   max-width: 100%;
   padding-bottom: 40px;
+  text-align: center;
 }
 
 .copyright ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin: 0 auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .copyright ul li {

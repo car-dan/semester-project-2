@@ -1,13 +1,18 @@
 footer {
-	background-color: black;
+	background-color: $color-thirtiary;
 	margin-top: 40px;
 }
 
 .footerContainer {
 	// height: 20vh;
-	color: whitesmoke;
-	border: 2px solid green;
+	color: $color-secundary;
+
 	padding-top: 40px;
+
+	a {
+		color: $color-secundary;
+		text-decoration: none;
+	}
 }
 
 .mediaLinks {
@@ -48,12 +53,10 @@ footer {
 .copyright {
 	max-width: 100%;
 	padding-bottom: 40px;
+	text-align: center;
 
 	ul {
-		display: flex;
 		margin: 0 auto;
-		align-items: center;
-		justify-content: center;
 
 		li {
 			padding: 0px 24px;

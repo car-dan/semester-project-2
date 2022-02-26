@@ -37,7 +37,7 @@ export async function favorites() {
 							</div>
 							<div class="favorite-back">
 								<h5 class="card-title">${favorite.title}</h5>
-    							<p class="card-text">${favorite.price}$</p>
+    							<p class="card-text">${favorite.price},-</p>
 							</div>
 						</div>
 					</a>
