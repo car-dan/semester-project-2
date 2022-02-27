@@ -32,7 +32,6 @@ export function populateForm(details) {
 	}
 
 	if (details.image) {
-		uploadImage.style.display = "block";
 		const imageUrl = details.image.formats.thumbnail.url;
 		image.src = imageUrl;
 

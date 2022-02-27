@@ -28,9 +28,8 @@
 		</nav>
 		<div class="container">
 			<div class="loader">loading....</div>
-			<h1>Edit product</h1>
-			<div class="loading">loading product....</div>
 			<form class="edit-form">
+				<h1>Edit product</h1>
 				<div class="message-container"></div>
 
 				<div>
@@ -47,24 +46,23 @@
 					<input type="number" id="price" />
 				</div>
 				<div>
+					<label for="featured">Featured</label>
 					<button class="featured">
 						<span class="default"></span>
 					</button>
 				</div>
-				<hr />
-
-				<div>
-					<label for="altText">Alt text</label>
-					<input type="text" id="altText" />
-				</div>
-
 				<div class="uploadImage">
+					<label for="image">Upload image</label>
 					<input
 						type="file"
 						id="image"
 						name="image"
 						accept="image/jpg, image/jpeg, image/png"
 					/>
+				</div>
+				<div>
+					<label for="altText">Alt text</label>
+					<input type="text" id="altText" />
 				</div>
 				<div class="preview">
 					<img src="" alt="" class="exsistingImg" />
@@ -74,11 +72,12 @@
 				<input id="id" type="hidden" />
 
 				<hr />
-
-				<div>
-					<button id="update">Update</button>
+				<div class="buttons">
+					<div>
+						<button id="update">Update</button>
+					</div>
+					<div class="delete-container"></div>
 				</div>
-				<div class="delete-container"></div>
 			</form>
 		</div>
 		<footer>

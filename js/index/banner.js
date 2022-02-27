@@ -20,6 +20,6 @@ export async function banner() {
 		bannerContainer.innerHTML = `
 		 <img src ="${bannerImgUrl}" alt ="${json.hero_banner_alt_text}";><img>`;
 	} catch (error) {
-		displayMessage("error", error, ".product-container");
+		displayMessage("error", error, ".message-container");
 	}
 }

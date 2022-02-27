@@ -1,0 +1,14 @@
+.error {
+	color: $font-primary;
+	background-color: rgba($color: $color-error, $alpha: 0.2);
+}
+
+.sucsess {
+	color: $font-green;
+	background-color: rgba($color: $color-green, $alpha: 0.2);
+}
+
+.warning {
+	color: $font-secundary;
+	background-color: rgba($color: $color-secundary, $alpha: 0.2);
+}

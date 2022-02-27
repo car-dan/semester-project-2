@@ -1,23 +1,29 @@
-.edit-form,
-.add-form {
-	.preview {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+.edit-form .buttons {
+	margin-top: 1rem;
+	display: flex;
 
-		img {
-			width: 150px;
-			height: 150px;
-			object-fit: cover;
-		}
+	button {
+		color: $color-thirtiary;
+		border: none;
+		box-shadow: none;
+		padding: 1rem;
 	}
 
-	.delete-imgContainer {
-		margin-left: 10px;
+	.delete {
+		background-color: $color-darkgrey;
+	}
+
+	#update {
+		background-color: $color-secundary;
 	}
 }
 
+.uploadImage {
+	display: flex;
+}
+
 .featured {
+	background-color: $color-thirtiary;
 	position: relative;
 	display: inline-block;
 	width: 60px;
@@ -28,7 +34,7 @@
 .featured span {
 	position: absolute;
 	cursor: pointer;
-	background-color: $color-thirtiary;
+	background-color: $color-darkgrey;
 	top: 2px;
 	bottom: 2px;
 	left: 4px;
@@ -37,15 +43,13 @@
 	content: "";
 	height: 26px;
 	width: 26px;
-
-	background-color: $color-thirtiary;
-
 	transition: 0.4s;
 	border-radius: 34px;
+	transform: translate(2px, 2px);
 }
 
 .featured span.active {
-	background-color: $color-primary;
+	background-color: $color-secundary;
 	transform: translateX(26px);
 	transition: 0.4s;
 	box-shadow: 0 0 1px $color-primary;
