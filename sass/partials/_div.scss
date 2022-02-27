@@ -1,15 +1,10 @@
-body {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
 $color-secundary: #e27d60;
 $color-primary: #262626;
 $color-thirtiary: #f2f2f2;
 $color-purple: #c38d9e;
 $color-green: #41b3a3;
 $color-grey: #a6a6a6;
+$color-darkgrey: #595959;
 //#595959
 //#0D0D0D
 
@@ -18,6 +13,13 @@ $font-secondary: mrs-eaves-roman-lining, sans-serif;
 
 $font-light: 400;
 $font-bold: 700;
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: $color-thirtiary;
+}
 
 // font-family: mrs-eaves,serif;
 // font-weight: 700;

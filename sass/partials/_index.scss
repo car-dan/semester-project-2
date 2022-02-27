@@ -1,10 +1,9 @@
 .container {
 	width: 100%;
-	margin: 10vh auto;
+	margin: 5vh auto;
 }
 .banner-container {
-	width: 100%;
-
+	width: 95%;
 	margin: 0 auto;
 	overflow: hidden;
 
@@ -12,7 +11,7 @@
 		filter: contrast(150%);
 		object-fit: cover;
 		width: 100%;
-		max-height: 60vh;
+		max-height: 40vh;
 
 		// object-position: 0px -250px;
 		// filter: sepia(30%) contrast(180%) brightness(70%) hue-rotate(40deg);

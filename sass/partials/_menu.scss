@@ -1,6 +1,6 @@
 nav {
 	position: relative;
-	background-color: $color-primary;
+	background-color: $color-darkgrey;
 	font-family: $font-secondary;
 	font-weight: $font-light;
 	font-size: 1.2rem;
@@ -75,7 +75,7 @@ nav {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: $color-thirtiary;
+	background-color: $color-primary;
 
 	ul {
 		list-style: none;
@@ -86,7 +86,7 @@ nav {
 
 	a {
 		text-decoration: none;
-		color: $color-primary;
+		color: $color-thirtiary;
 		font-family: $font-primary;
 		font-size: $font-bold;
 		font-size: 1.8rem;
