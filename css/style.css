@@ -37,22 +37,23 @@ body {
 
 nav {
   position: relative;
-  background-color: #595959;
+  background-color: #f2f2f2;
   font-family: mrs-eaves-roman-lining, sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
   width: 100vw;
-  height: 20vh;
+  height: 15vh;
   padding: 2px 0;
 }
 
 nav a {
-  color: #f2f2f2;
+  color: #262626;
   text-decoration: none;
 }
 
 .main-nav {
   width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,8 +65,14 @@ nav a {
           align-items: center;
 }
 
+@media only screen and (min-width: 768px) {
+  .main-nav {
+    height: 50%;
+  }
+}
+
 .logo {
-  height: 10vh;
+  height: 100%;
   width: 30%;
   padding-left: 5px;
 }
@@ -78,9 +85,10 @@ nav a {
 }
 
 .main-links {
+  height: 100%;
   text-align: center;
   padding-right: 40px;
-  color: #f2f2f2;
+  color: #262626;
 }
 
 .main-links .user,
@@ -90,22 +98,26 @@ nav a {
 
 .main-links button {
   background: transparent;
-  color: #f2f2f2;
+  color: #262626;
   border: none;
   font-size: 0.8rem;
 }
 
 .main-links .nav-cart {
-  padding: 20px;
+  padding: 10px;
   font-size: 1.5rem;
+}
+
+.main-links .nav-cart i {
+  color: #e27d60;
 }
 
 .main-links .nav-cart span {
   padding-left: 9px;
   padding-right: 9px;
   border-radius: 9px;
-  background-color: #e27d60;
-  color: #262626;
+  background-color: #262626;
+  color: #f2f2f2;
   font-size: 15px;
   padding: 0 5px;
   vertical-align: top;
@@ -113,10 +125,8 @@ nav a {
 }
 
 .nav-links {
-  height: 10vh;
-  line-height: 10vh;
+  height: 50%;
   position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: #262626;
 }
@@ -155,7 +165,7 @@ nav a {
   width: 25px;
   height: 3px;
   margin: 5px;
-  background-color: #f2f2f2;
+  background-color: #262626;
 }
 
 @media screen and (max-width: 768px) {
@@ -173,8 +183,8 @@ nav a {
     left: 0px;
     width: 100vw;
     height: 85vh;
-    top: 10vh;
-    background-color: #f2f2f2;
+    top: 15vh;
+    background-color: #262626;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
     -webkit-transition: -webkit-transform 0.5s ease-in;
@@ -193,7 +203,7 @@ nav a {
             flex-direction: column;
   }
   .nav-links a {
-    color: #262626;
+    color: #f2f2f2;
   }
   .hamburger {
     display: block;
@@ -324,7 +334,7 @@ nav a {
 .favorite-back {
   text-transform: capitalize;
   background-color: #262626;
-  color: #e27d60;
+  color: #f2f2f2;
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
   padding: 100px 0;
@@ -602,21 +612,14 @@ nav a {
 .edit-form,
 .add-form {
   margin: 40px auto;
-  width: 90%;
+  width: 60%;
   font-size: 16px;
-  background: #495c70;
+  background: #a6a6a6;
   padding: 60px;
   border-radius: 5px;
   text-align: center;
-}
-
-@media only screen and (min-width: 970px) {
-  .logInForm,
-  .edit-form,
-  .add-form {
-    width: 60%;
-    padding: 120px;
-  }
+  -webkit-box-shadow: 0 4px 8px 0 rgba(38, 38, 38, 0.5), 0 6px 20px 0 rgba(38, 38, 38, 0.5);
+          box-shadow: 0 4px 8px 0 rgba(38, 38, 38, 0.5), 0 6px 20px 0 rgba(38, 38, 38, 0.5);
 }
 
 .logInForm input,
@@ -626,7 +629,7 @@ nav a {
 .add-form input,
 .add-form label {
   font-size: 16px;
-  color: #fff;
+  color: #f2f2f2;
 }
 
 .logInForm div,
@@ -659,7 +662,7 @@ nav a {
 .add-form input {
   background: transparent;
   border: none;
-  border-bottom: 1px dashed #83a4c5;
+  border-bottom: 1px dashed #f2f2f2;
   width: 60%;
   outline: none;
   padding: 0;
@@ -668,12 +671,14 @@ nav a {
 .logInForm button,
 .edit-form button,
 .add-form button {
-  background: #576e86;
+  background: #f2f2f2;
   border: none;
   padding: 8px 10px 8px 10px;
   border-radius: 5px;
-  color: #a8bace;
+  color: #e27d60;
   cursor: pointer;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(38, 38, 38, 0.5), 0 6px 20px 0 rgba(38, 38, 38, 0.5);
+          box-shadow: 0 4px 8px 0 rgba(38, 38, 38, 0.5), 0 6px 20px 0 rgba(38, 38, 38, 0.5);
 }
 
 .logInForm button:hover,
@@ -682,13 +687,7 @@ nav a {
 .edit-form input:hover,
 .add-form button:hover,
 .add-form input:hover {
-  background: #394d61;
-}
-
-.edit-form,
-.add-form {
-  margin: 40px auto;
-  width: 90%;
+  background: #595959;
 }
 
 .edit-form .preview,
@@ -728,7 +727,7 @@ nav a {
 .featured span {
   position: absolute;
   cursor: pointer;
-  background-color: #ccc;
+  background-color: #f2f2f2;
   top: 2px;
   bottom: 2px;
   left: 4px;
@@ -737,20 +736,20 @@ nav a {
   content: "";
   height: 26px;
   width: 26px;
-  background-color: white;
+  background-color: #f2f2f2;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
 }
 
 .featured span.active {
-  background-color: #2196f3;
+  background-color: #262626;
   -webkit-transform: translateX(26px);
           transform: translateX(26px);
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  -webkit-box-shadow: 0 0 1px #2196f3;
-          box-shadow: 0 0 1px #2196f3;
+  -webkit-box-shadow: 0 0 1px #262626;
+          box-shadow: 0 0 1px #262626;
 }
 
 footer {

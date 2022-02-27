@@ -1,5 +1,5 @@
 import { baseUrl } from "../settings/api.js";
-import deleteButton from "../index/products/deleteButton.js";
+import deleteButton from "../products/deleteButton.js";
 import displayMessage from "../common/displayMessage.js";
 import { populateForm } from "./populateForm.js";
 import { renderFile } from "../utils/renderFile.js";
