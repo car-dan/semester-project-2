@@ -62,6 +62,7 @@
 }
 
 .favorite-back {
+	text-transform: capitalize;
 	background-color: $color-primary;
 	color: $color-secundary;
 	transform: rotateX(180deg);
