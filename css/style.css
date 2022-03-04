@@ -4,12 +4,17 @@ body {
   padding: 0;
   background-color: #fffbfe;
   color: #2a2d34;
+  font-family: roboto-mono, monospace;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 nav {
   position: relative;
   width: 100vw;
   height: 25vh;
+  font-family: bennet-banner, sans-serif;
+  font-weight: 600;
 }
 
 .main-nav {
@@ -157,8 +162,8 @@ nav {
 .nav-links a {
   text-decoration: none;
   color: #fffbfe;
-  font-family: mrs-eaves, serif;
-  font-size: 700;
+  font-family: bennet-banner, sans-serif;
+  font-size: 500;
   font-size: 1.8rem;
 }
 
@@ -390,7 +395,7 @@ nav {
 
 .product-container .favorite-back h5,
 .product-container .favorite-back p {
-  font-family: mrs-eaves-roman-lining, sans-serif;
+  font-family: roboto-mono, monospace;
   font-size: 2rem;
 }
 
@@ -848,8 +853,8 @@ nav {
 }
 
 .edit-form .buttons button {
-  font-family: mrs-eaves, serif;
-  font-weight: 700;
+  font-family: bennet-banner, sans-serif;
+  font-weight: 500;
   font-size: 1.5rem;
   text-transform: uppercase;
   color: #fffbfe;
@@ -1429,14 +1434,6 @@ footer {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: mrs-eaves-roman-petite-caps, sans-serif;
   letter-spacing: 0.1rem;
 }
-
-/*!
- * Bootstrap v5.1.3 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 /*# sourceMappingURL=style.css.map */

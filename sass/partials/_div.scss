@@ -8,11 +8,11 @@ $color-white: #fffbfe;
 $color-grey: #889696;
 $color-mint: #f4fff8;
 
-$font-primary: mrs-eaves, serif;
-$font-secondary: mrs-eaves-roman-lining, sans-serif;
+$font-primary: bennet-banner, sans-serif;
+$font-secondary: roboto-mono, monospace;
 
-$font-light: 400;
-$font-bold: 700;
+$font-weight-primary: 600;
+$font-weight-secundary: 500;
 
 body {
 	width: 100%;
@@ -20,4 +20,7 @@ body {
 	padding: 0;
 	background-color: $color-white;
 	color: $color-primary;
+	font-family: $font-secondary;
+	font-weight: $font-weight-secundary;
+	text-transform: capitalize;
 }

@@ -2,6 +2,8 @@ nav {
 	position: relative;
 	width: 100vw;
 	height: 25vh;
+	font-family: $font-primary;
+	font-weight: $font-weight-primary;
 }
 
 .main-nav {
@@ -143,7 +145,7 @@ nav {
 		text-decoration: none;
 		color: $color-white;
 		font-family: $font-primary;
-		font-size: $font-bold;
+		font-size: $font-weight-secundary;
 		font-size: 1.8rem;
 	}
 
