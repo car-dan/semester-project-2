@@ -1,32 +1,12 @@
-// $color-secundary: #e27d60;
-// $color-primary: #262626;
-// $color-thirtiary: #f2f2f2;
-// $color-purple: #c38d9e;
-// $color-green: #41b3a3;
-// $color-grey: #a6a6a6;
-// $color-darkgrey: #595959;
-// $color-error: #e35479;
-//#595959
-//#0D0D0D
-
-// $color-secundary: #e27d60;
-$color-primary: #013440;
-$color-thirtiary: #f2f2f2;
-$color-purple: #c38d9e;
-$color-green: #41b3a3;
-
-$color-darkgrey: #595959;
-$color-error: #e35479;
-
-$color-background: #fffcf2;
-$color-navbar: #232020;
-$color-accent: #f5853f;
-$color-secundary: #ccc5b9;
-$color-green: #2fbf71;
-$color-blue: #2274a5;
-$color-yellow: #e0ca3c;
+$color-primary: #2a2d34;
+$color-navbar: #464655;
+$color-accent: #a33b20;
+$color-green: #4da167;
+$color-error: #a31621;
+$color-yellow: #fffc31;
 $color-white: #fffbfe;
-$color-grey: #7e8987;
+$color-grey: #889696;
+$color-mint: #f4fff8;
 
 $font-primary: mrs-eaves, serif;
 $font-secondary: mrs-eaves-roman-lining, sans-serif;
@@ -39,132 +19,5 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: $color-white;
+	color: $color-primary;
 }
-
-// font-family: mrs-eaves,serif;
-// font-weight: 700;
-// font-style: italic;
-
-// font-family: mrs-eaves,serif;
-// font-weight: 400;
-// font-style: normal;
-
-// font-family: mrs-eaves,serif;
-// font-weight: 700;
-// font-style: normal;
-
-// font-family: mrs-eaves,serif;
-// font-weight: 400;
-// font-style: italic;
-
-// font-family: mrs-eaves-roman-lining,sans-serif;
-// font-weight: 400;
-// font-style: normal;
-
-// font-family: mrs-eaves-roman-small-caps,sans-serif;
-// font-weight: 400;
-// font-style: normal;
-
-// font-family: mrs-eaves-roman-all-small-ca,sans-serif;
-// font-weight: 400;
-// font-style: normal;
-
-// font-family: mrs-eaves-roman-all-petite-c,sans-serif;
-// font-weight: 400;
-// font-style: normal;
-
-// font-family: mrs-eaves-roman-petite-caps,sans-serif;
-// font-weight: 400;
-// font-style: normal;
-
-// .message {
-// 	width: 100%;
-// 	padding: 1rem;
-// 	border: 1px solid grey;
-// }
-
-// .message.error {
-// 	border-color: red;
-// 	color: white;
-// 	background: red;
-// }
-
-// .message.warning {
-// 	border-color: orange;
-// 	color: white;
-// 	background: orange;
-// }
-
-// .message.success {
-// 	border-color: green;
-// 	color: white;
-// 	background: green;
-// }
-
-// .edit-form {
-// 	display: none;
-// }
-
-// .delete {
-// 	background: darkred;
-// }
-
-// .cart-item {
-// 	width: 100%;
-// 	display: flex;
-// 	justify-content: space-between;
-
-// 	.quantity {
-// 		display: flex;
-// 		width: 40%;
-// 	}
-// }
-
-// #dipslayImage {
-// 	width: 375px;
-// 	height: 211px;
-// 	border: 1px solid black;
-// 	background-position: center;
-// 	background-size: cover;
-// }
-
-// .image-preview__image {
-// 	display: none;
-// 	width: 100%;
-// }
-
-// //switch on edit page for featured
-
-// .featured {
-// 	position: relative;
-// 	display: inline-block;
-// 	width: 60px;
-// 	height: 34px;
-// 	border-radius: 34px;
-// }
-
-// .featured span {
-// 	position: absolute;
-// 	cursor: pointer;
-// 	background-color: #ccc;
-// 	top: 2px;
-// 	bottom: 2px;
-// 	left: 4px;
-// 	right: 0;
-// 	bottom: 0;
-// 	content: "";
-// 	height: 26px;
-// 	width: 26px;
-
-// 	background-color: white;
-
-// 	transition: 0.4s;
-// 	border-radius: 34px;
-// }
-
-// .featured span.active {
-// 	background-color: #2196f3;
-// 	transform: translateX(26px);
-// 	transition: 0.4s;
-// 	box-shadow: 0 0 1px #2196f3;
-// }

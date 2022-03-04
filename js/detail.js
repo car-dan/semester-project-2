@@ -38,12 +38,32 @@ const productUrl = baseUrl + "/products/" + id;
 								<div class="detail-infoPrice">
 									<p>${detail.price},-</p>
 									<button class = "addCart" data-id="${detail.id}"
-									data-image="${detail.image.formats.thumbnail.url}" data-name="${detail.title}" data-price="${detail.price}" data-number="1"><i class="fa-solid fa-cart-arrow-down"></i>Add to cart</button>
+										data-image="${detail.image.formats.thumbnail.url}" data-name="${detail.title}" data-price="${detail.price}" data-number="1">
+											<span class="addToCart">Add to cart</span>
+											<span class="added"></span>
+											<i class="fa-solid fa-cart-arrow-down"></i>
+									</button>
 								</div>	
 							</div>`;
-
+		animateAddButton();
 		addToCart(detail);
 	} catch (error) {
 		displayMessage("error", error, ".detail-container");
 	}
 })();
+
+function animateAddButton() {
+	const cartButton = document.querySelector(".addCart");
+	const added = document.querySelector(".added");
+
+	cartButton.addEventListener(`click`, cartClick);
+
+	function cartClick() {
+		let button = this;
+		button.classList.add(`clicked`);
+		added.innerHTML = `Added to cart`;
+		setTimeout(function () {
+			button.classList.remove(`clicked`);
+		}, 3000);
+	}
+}

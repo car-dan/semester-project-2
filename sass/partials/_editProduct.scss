@@ -21,7 +21,8 @@
 	.delete {
 		position: absolute;
 		background-color: transparent;
-		color: $color-navbar;
+		color: $color-accent;
+		border: 1px solid $color-accent;
 		right: 0;
 
 		@media only screen and (max-width: 670px) {
@@ -33,7 +34,7 @@
 		background-color: $color-accent;
 	}
 
-	@media only screen and (max-width: 670px) {
+	@media only screen and (max-width: 750px) {
 		display: block;
 	}
 }

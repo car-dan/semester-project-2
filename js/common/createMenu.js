@@ -24,7 +24,7 @@ export default function createMenu() {
 	mainContainer.innerHTML = `
 								<div class="user">
 									${authLink}
-									<p>${user}</p>
+									<p class="userName">${user}</p>
 								</div>
 								<div class="logOut"> ${logOut}</div>
 								<div class="nav-cart">

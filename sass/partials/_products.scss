@@ -12,7 +12,7 @@
 	width: 80%;
 	margin: 0px auto;
 	padding: 1rem 0.5rem;
-	border: 1px solid $color-navbar;
+	border: 1px solid $color-primary;
 }
 
 .products {
@@ -25,12 +25,14 @@
 
 .product {
 	width: 100%;
-	background-color: $color-navbar;
+	background-color: $color-white;
+	box-shadow: 0 4px 8px 0 rgba($color: $color-navbar, $alpha: 0.5),
+		0 6px 20px 0 rgba($color: $color-navbar, $alpha: 0.5);
 	margin: 1rem 0.5rem;
 
 	a {
 		text-decoration: none;
-		color: $color-white;
+		color: $color-primary;
 		display: flex;
 	}
 
@@ -47,8 +49,8 @@
 
 	.product-info {
 		width: 50%;
-		margin-left: 1rem;
-		text-align: left;
+
+		text-align: center;
 		font-size: 2rem;
 	}
 

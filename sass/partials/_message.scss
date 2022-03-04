@@ -1,19 +1,28 @@
 .message {
 	padding: 2rem;
 	font-size: 2rem;
+	border-radius: 5px;
+	text-align: center;
+	text-transform: capitalize;
+
+	box-shadow: 0 4px 8px 0 rgba($color: $color-primary, $alpha: 0.2),
+		0 6px 20px 0 rgba($color: $color-primary, $alpha: 0.2);
 }
 
 .error {
-	color: $color-navbar;
-	background-color: rgba($color: $color-accent, $alpha: 0.8);
+	color: $color-white;
+	border: 1px solid $color-error;
+	background-color: rgba($color: $color-error, $alpha: 1);
 }
 
 .sucsess {
-	color: $color-thirtiary;
-	background-color: rgba($color: $color-green, $alpha: 0.8);
+	color: $color-white;
+	border: 1px solid $color-green;
+	background-color: rgba($color: $color-green, $alpha: 1);
 }
 
 .warning {
-	color: $color-secundary;
-	background-color: rgba($color: $color-yellow, $alpha: 0.8);
+	color: $color-navbar;
+	border: 1px solid $color-yellow;
+	background-color: rgba($color: $color-yellow, $alpha: 1);
 }

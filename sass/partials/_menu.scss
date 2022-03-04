@@ -1,27 +1,27 @@
 nav {
 	position: relative;
 	width: 100vw;
-	height: 30vh;
+	height: 25vh;
 }
 
 .main-nav {
-	padding: 1rem 1rem;
+	padding: 0.5rem 1rem;
 	margin: 0;
 	width: 100vw;
-	height: 60%;
+	height: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: $color-white;
+	background-color: #2a2d34;
 
 	.logo {
-		width: 20%;
+		max-width: 100%;
 		max-height: 100%;
-		padding: 5px;
+		padding-top: 1rem;
 		margin-bottom: 1rem;
 
 		img {
-			width: 100%;
+			max-width: 50%;
 			max-height: 100%;
 			object-fit: contain;
 		}
@@ -29,48 +29,62 @@ nav {
 
 	.main-links {
 		text-align: end;
-		padding-top: 0.5rem;
-		margin-left: auto;
 		width: 40%;
 		height: 100%;
 		padding-right: 1rem;
+		color: #f4fff8;
 
 		a {
-			color: $color-navbar;
+			color: $color-white;
 			text-decoration: none;
 		}
 
 		.user,
 		.logOut {
 			font-size: 0.8rem;
+			padding-bottom: 0.5rem;
 		}
 
 		.nav-cart {
-			padding-top: 2rem;
-			font-size: 2rem;
+			font-size: 1.5rem;
 
 			span {
 				font-size: 0.8rem;
-				padding: 5px 10px;
+				padding: 3px 5px;
 				background-color: $color-accent;
 				border-radius: 50%;
-				color: $color-background;
+				color: $color-white;
 				vertical-align: top;
 				margin-left: -15px;
 			}
 		}
 
 		button {
+			color: #f4fff8;
 			background: transparent;
 			border: none;
 			margin-top: 0.5rem;
+			padding: 5px;
 		}
 	}
+	@media only screen and(max-width: 400px) {
+		.nav-cart-count {
+			letter-spacing: 0;
+		}
+	}
+
 	@media only screen and (max-width: 768px) {
 		.main-links {
 			.user,
 			.logOut {
 				font-size: 0.5rem;
+			}
+			.user {
+				padding: 0;
+				margin: 0;
+			}
+			.userName {
+				display: none;
 			}
 			.nav-cart {
 				width: 100%;
@@ -111,10 +125,10 @@ nav {
 }
 
 .nav-links {
-	height: 40%;
+	height: 50%;
 	position: absolute;
 	width: 100%;
-	background-color: $color-navbar;
+	background-color: #889696;
 
 	ul {
 		width: 100%;
@@ -127,7 +141,7 @@ nav {
 
 	a {
 		text-decoration: none;
-		color: $color-background;
+		color: $color-white;
 		font-family: $font-primary;
 		font-size: $font-bold;
 		font-size: 1.8rem;
@@ -144,7 +158,7 @@ nav {
 		width: 25px;
 		height: 3px;
 		margin: 5px;
-		background-color: $color-navbar;
+		background-color: $color-white;
 	}
 }
 
@@ -163,9 +177,9 @@ nav {
 		position: absolute;
 		left: 0px;
 		width: 100vw;
-		height: 82vh;
-		top: 18vh;
-		background-color: $color-navbar;
+		height: 87.5vh;
+		top: 12.5vh;
+		background-color: $color-primary;
 
 		transform: translateX(-100%);
 		transition: transform 0.8s ease-in-out;
@@ -176,7 +190,7 @@ nav {
 		}
 
 		a {
-			color: $color-background;
+			color: $color-white;
 		}
 	}
 
