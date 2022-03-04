@@ -1166,6 +1166,10 @@ footer {
   overflow: hidden;
 }
 
+.logInForm button {
+  background-color: #a33b20;
+}
+
 .message {
   padding: 2rem;
   font-size: 2rem;
