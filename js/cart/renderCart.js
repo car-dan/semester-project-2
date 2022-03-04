@@ -22,7 +22,11 @@ export function renderCart(cart) {
 
 			container.innerHTML += `
                             <div class="cart-item">
+							
 								<div class="cart-info">
+								<div class="remove">
+										<i class="fa-solid fa-x" data-id="${product.id}"></i>
+									</div>
 									<div class="cart-image">
 										<a href ="${productlink}">
 											<img src="${imageUrl}"/>
@@ -40,13 +44,11 @@ export function renderCart(cart) {
 										<i class="fa-solid fa-plus" data-id="${product.id}" data-image="${product.image}" data-name="${product.name}" data-price="${product.price}" data-items="${product.items}"></i>
 										
                               		</div>
-									<div class="remove">
-										<i class="fa-solid fa-x" data-id="${product.id}"></i>
-									</div>
+									
 									
 								</div>
 								<div class="cart-price">
-										<p class = "itemPrice"><span  data-id="${product.id}">${itemsPrice}</span>-,</p>
+										<p class = "itemPrice"><span  data-id="${product.id}">${itemsPrice}</span>,-</p>
 								</div>
 								
                             </div> 
@@ -56,8 +58,8 @@ export function renderCart(cart) {
 			totalPrice.toFixed(2);
 			return totalPrice;
 		});
-		totalContainer.innerHTML = `<p>Total price: </p>
-                                    <span>${totalPrice},-</span>
+		totalContainer.innerHTML = `<p>Total price: <span>${totalPrice},-</span> </p>
+                                    
 									<hr>
                                     `;
 	} else {

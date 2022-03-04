@@ -3,7 +3,7 @@
 @import "partials/custom";
 @import "partials/index";
 @import "partials/image";
-@import "partials/favorites";
+
 @import "partials/products";
 @import "partials/details";
 @import "partials/cart";
@@ -19,7 +19,8 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: mrs-eaves-roman-petite-caps, sans-serif;
-	font-weight: $color-background;
+	// font-weight: $color-background;
+	// background-color: $color-white;
 	letter-spacing: 0.1rem;
 }
 /*!
