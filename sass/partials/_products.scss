@@ -1,6 +1,10 @@
 .products-container {
 	width: 100%;
-	margin: 10vh auto;
+	margin: 5vh auto;
+
+	@media only screen and (max-width: 768px) {
+		margin: -10vh auto;
+	}
 }
 
 .search {
@@ -8,7 +12,7 @@
 	width: 80%;
 	margin: 0px auto;
 	padding: 1rem 0.5rem;
-	border: 1px solid black;
+	border: 1px solid $color-navbar;
 }
 
 .products {
@@ -21,7 +25,7 @@
 
 .product {
 	width: 100%;
-	background-color: whitesmoke;
+	background-color: $color-white;
 	margin: 1rem 0.5rem;
 
 	@media only screen and (min-width: 500px) {
@@ -39,7 +43,7 @@
 
 	a {
 		text-decoration: none;
-		color: black;
+		color: $color-navbar;
 		display: flex;
 
 		@media only screen and (min-width: 500px) {

@@ -6,6 +6,9 @@ import { renderFile } from "../utils/renderFile.js";
 import { checkSubmit } from "../utils/checkSubmit.js";
 
 export async function loadProduct(id) {
+	const loader = document.querySelector(".loader");
+	loader.style.display = "none";
+
 	const productUrl = baseUrl + "/products/" + id;
 	const form = document.querySelector("form");
 	const loading = document.querySelector(".loading");

@@ -1,23 +1,26 @@
+@import "partials/div";
+@import "partials/menu";
 @import "partials/custom";
 @import "partials/index";
 @import "partials/image";
-@import "partials/div";
-@import "partials/menu";
-@import "partials/logo";
 @import "partials/favorites";
 @import "partials/products";
 @import "partials/details";
 @import "partials/cart";
-@import "partials/logIn";
+// @import "partials/logIn";
 @import "partials/editProduct";
 @import "partials/footer";
 @import "partials/form";
 @import "partials/message";
+@import "partials/loader";
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: mrs-eaves-roman-petite-caps, sans-serif;
+	font-weight: $color-background;
+	letter-spacing: 0.1rem;
 }
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)

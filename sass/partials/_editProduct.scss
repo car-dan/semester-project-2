@@ -1,20 +1,40 @@
 .edit-form .buttons {
-	margin-top: 1rem;
+	position: relative;
+	margin: 1rem auto 0;
+	width: 60%;
 	display: flex;
+	justify-content: space-between;
 
 	button {
-		color: $color-thirtiary;
-		border: none;
+		font-family: $font-primary;
+		font-weight: $font-bold;
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		color: $color-white;
+		border: 1px thin $color-accent;
 		box-shadow: none;
-		padding: 1rem;
+		padding: 1.5rem;
+		box-shadow: 0 4px 8px 0 rgba($color: $color-navbar, $alpha: 0.5),
+			0 6px 20px 0 rgba($color: $color-navbar, $alpha: 0.5);
 	}
 
 	.delete {
-		background-color: $color-darkgrey;
+		position: absolute;
+		background-color: transparent;
+		color: $color-navbar;
+		right: 0;
+
+		@media only screen and (max-width: 670px) {
+			position: relative;
+		}
 	}
 
 	#update {
-		background-color: $color-secundary;
+		background-color: $color-accent;
+	}
+
+	@media only screen and (max-width: 670px) {
+		display: block;
 	}
 }
 
@@ -23,7 +43,7 @@
 }
 
 .featured {
-	background-color: $color-thirtiary;
+	background-color: $color-white;
 	position: relative;
 	display: inline-block;
 	width: 60px;
@@ -34,7 +54,7 @@
 .featured span {
 	position: absolute;
 	cursor: pointer;
-	background-color: $color-darkgrey;
+	background-color: $color-grey;
 	top: 2px;
 	bottom: 2px;
 	left: 4px;
@@ -49,8 +69,8 @@
 }
 
 .featured span.active {
-	background-color: $color-secundary;
+	background-color: $color-accent;
 	transform: translateX(26px);
 	transition: 0.4s;
-	box-shadow: 0 0 1px $color-primary;
+	box-shadow: 0 0 1px $color-navbar;
 }

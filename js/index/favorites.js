@@ -5,7 +5,11 @@ import { getUserName } from "../utils/storage.js";
 const productsUrl = baseUrl + "/" + "products";
 
 export async function favorites() {
-	const container = document.querySelector(".product-container");
+	const container = document.querySelector(".favorites-container");
+
+	const loader = document.querySelector(".loader");
+
+	loader.style.display = "none";
 
 	try {
 		const respons = await fetch(productsUrl);

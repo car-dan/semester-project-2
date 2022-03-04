@@ -1,17 +1,17 @@
 footer {
-	background-color: $color-primary;
+	background-color: $color-navbar;
 	margin-top: 40px;
 	text-transform: uppercase;
 }
 
 .footerContainer {
 	// height: 20vh;
-	color: $color-secundary;
+	color: $color-white;
 
 	padding-top: 40px;
 
 	a {
-		color: $color-secundary;
+		color: $color-white;
 		text-decoration: none;
 	}
 }

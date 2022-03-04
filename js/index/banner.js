@@ -4,16 +4,13 @@ import displayMessage from "../common/displayMessage.js";
 const bannerUrl = baseUrl + "/home";
 
 export async function banner() {
-	const loader = document.querySelector(".loader");
 	const bannerContainer = document.querySelector(".banner-container");
-
 	bannerContainer.innerHTML = "";
 
 	try {
-		loader.innerHTML = "";
 		const respons = await fetch(bannerUrl);
 		const json = await respons.json();
-		console.log(json.hero_banner);
+
 		const bannerImg = json.hero_banner.formats.large.url;
 		const bannerImgUrl = bannerImg;
 

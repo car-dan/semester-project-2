@@ -13,11 +13,11 @@ export default function createMenu() {
 
 	let authLink = `<a href= "login.html"  class = "${
 		pathname === "/login.html" ? "active" : ""
-	}">Login</a>`;
+	}"><i class="fa-solid fa-user"></i>Login</a>`;
 
 	if (username) {
 		authLink = "";
-		logOut = `<button id= "logout">Logout</button>`;
+		logOut = `<button id= "logout"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></button>`;
 		user = `Hi ${username}`;
 	}
 
@@ -28,10 +28,10 @@ export default function createMenu() {
 								</div>
 								<div class="logOut"> ${logOut}</div>
 								<div class="nav-cart">
-									<a href="cart.html" class="${
-										pathname === "/cart.html" ? "active" : ""
-									}"><i class="fa-solid fa-cart-shopping"></i>
-									<span class="nav-cart-count">0</span></a>
+									<a href="cart.html">
+										<i class="fa-solid fa-basket-shopping"></i>
+										<span class="nav-cart-count">0</span>
+									</a>
 								</div>
 								
 								

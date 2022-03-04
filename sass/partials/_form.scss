@@ -8,11 +8,14 @@
 	padding: 1.5rem;
 	border-radius: 10px;
 	text-align: center;
-	box-shadow: 0 4px 8px 0 rgba($color: $color-primary, $alpha: 0.5),
-		0 6px 20px 0 rgba($color: $color-primary, $alpha: 0.5);
+	box-shadow: 0 4px 8px 0 rgba($color: $color-navbar, $alpha: 0.5),
+		0 6px 20px 0 rgba($color: $color-navbar, $alpha: 0.5);
 
+	@media only screen and (min-width: 1000px) {
+		width: 50%;
+	}
 	h1 {
-		color: $color-thirtiary;
+		color: $color-white;
 		margin-bottom: 1rem;
 	}
 
@@ -24,7 +27,6 @@
 
 	div {
 		max-width: 100%;
-		// overflow: hidden;
 		display: block;
 		margin-bottom: 1rem;
 		padding: 0;
@@ -41,15 +43,16 @@
 
 	label {
 		display: block;
-		color: rgba($color: $color-thirtiary, $alpha: 0.7);
+		color: rgba($color: $color-white, $alpha: 0.7);
 	}
 
-	input {
+	input,
+	textarea {
 		background: transparent;
 		font-size: 16px;
-		color: $color-thirtiary;
+		color: $color-white;
 		border: none;
-		border-bottom: 1px dashed $color-thirtiary;
+		border-bottom: 1px dashed $color-white;
 		outline: none;
 		padding: 5px 0;
 
@@ -58,23 +61,30 @@
 		}
 	}
 
-	input[type="textarea"] {
-		min-height: 200px;
+	textarea::-webkit-scrollbar,
+	textarea::-webkit-resizer,
+	textarea::-webkit-scrollbar-corner {
+		background-color: transparent;
+	}
+
+	textarea::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba($color: $color-white, $alpha: 0.7);
 	}
 	button {
-		background: $color-thirtiary;
+		background: $color-white;
 		border: none;
 		padding: 8px 10px 8px 10px;
 		border-radius: 5px;
-		color: $color-secundary;
+		color: $color-grey;
 		cursor: pointer;
-		box-shadow: 0 4px 8px 0 rgba($color: $color-primary, $alpha: 0.5),
-			0 6px 20px 0 rgba($color: $color-primary, $alpha: 0.5);
+		box-shadow: 0 4px 8px 0 rgba($color: $color-navbar, $alpha: 0.2),
+			0 6px 20px 0 rgba($color: $color-navbar, $alpha: 0.2);
 	}
 
 	button:hover,
 	input:hover {
-		background: $color-darkgrey;
+		background: $color-grey;
 	}
 
 	img {

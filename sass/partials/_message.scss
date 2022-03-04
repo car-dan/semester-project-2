@@ -1,14 +1,19 @@
+.message {
+	padding: 2rem;
+	font-size: 2rem;
+}
+
 .error {
-	color: $font-primary;
-	background-color: rgba($color: $color-error, $alpha: 0.2);
+	color: $color-navbar;
+	background-color: rgba($color: $color-accent, $alpha: 0.8);
 }
 
 .sucsess {
-	color: $font-green;
-	background-color: rgba($color: $color-green, $alpha: 0.2);
+	color: $color-thirtiary;
+	background-color: rgba($color: $color-green, $alpha: 0.8);
 }
 
 .warning {
-	color: $font-secundary;
-	background-color: rgba($color: $color-secundary, $alpha: 0.2);
+	color: $color-secundary;
+	background-color: rgba($color: $color-yellow, $alpha: 0.8);
 }
