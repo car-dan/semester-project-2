@@ -443,6 +443,7 @@ nav {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  text-transform: capitalize;
 }
 
 .product {
@@ -842,13 +843,20 @@ nav {
 .edit-form .buttons {
   position: relative;
   margin: 1rem auto 0;
-  width: 60%;
+  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 700px) {
+  .edit-form .buttons {
+    display: block;
+  }
 }
 
 .edit-form .buttons button {
@@ -881,12 +889,6 @@ nav {
 
 .edit-form .buttons #update {
   background-color: #a33b20;
-}
-
-@media only screen and (max-width: 750px) {
-  .edit-form .buttons {
-    display: block;
-  }
 }
 
 .uploadImage {
@@ -1033,7 +1035,7 @@ footer {
   .logInForm,
   .edit-form,
   .add-form {
-    width: 50%;
+    width: 60%;
   }
 }
 

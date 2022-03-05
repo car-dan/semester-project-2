@@ -20,6 +20,7 @@ function handleChange() {
 	const price = this.dataset.price;
 	const items = this.dataset.items;
 	const image = this.dataset.image;
+	const cartItemContainer = document.querySelector(".nav-cart-count");
 
 	const cart = getFromStorage("cart");
 
@@ -30,16 +31,19 @@ function handleChange() {
 	});
 
 	let newCount;
+	let cartCount = parseInt(cartItemContainer.innerHTML);
 
 	if (this.className === "fa-solid fa-plus") {
 		if (oldProduct[0].items < 100) {
 			newCount = parseFloat(oldProduct[0].items) + 1;
+			cartCount = cartCount + 1;
 		} else {
 			newCount = parseFloat(oldProduct[0].items);
 		}
 	} else {
 		if (oldProduct[0].items >= 2) {
 			newCount = parseFloat(oldProduct[0].items) - 1;
+			cartCount = cartCount - 1;
 		} else {
 			const newCart = cart.filter((cart) => cart.id !== id);
 
@@ -62,14 +66,12 @@ function handleChange() {
 	saveToStorage("cart", newCart);
 
 	const newPrice = parseFloat(price) * parseFloat(newCount);
-
 	const priceContainer = document.querySelectorAll(".itemPrice span");
 	const totalPriceContainer = document.querySelector(".total-container span");
 	let totalPrice = 0;
 
 	priceContainer.forEach((price) => {
 		if (price.dataset.id === id) {
-			console.log(price.innerHTML);
 			price.innerHTML = newPrice.toFixed(2);
 		}
 		return (totalPrice = totalPrice + parseFloat(price.innerHTML));
@@ -77,7 +79,6 @@ function handleChange() {
 
 	totalPriceContainer.innerHTML = totalPrice;
 
-	console.log(totalPrice);
 	const countContainer = document.querySelectorAll(".quantity");
 
 	countContainer.forEach((count) => {
@@ -85,4 +86,6 @@ function handleChange() {
 			count.value = newCount;
 		}
 	});
+
+	cartItemContainer.innerHTML = cartCount;
 }

@@ -47,12 +47,13 @@ async function doLogin(username, password) {
 		console.log(json);
 
 		if (json.user) {
-			displayMessage("succsess", "Loggd inn", ".message-container");
+			displayMessage("sucsess", "Logged in", ".message-container");
 
 			saveToken(json.jwt);
 			saveUser(json.user);
-
-			location.href = "/";
+			setTimeout(function () {
+				location.href = "/";
+			}, 3000);
 		}
 
 		if (json.error) {

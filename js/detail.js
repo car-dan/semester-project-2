@@ -65,5 +65,9 @@ function animateAddButton() {
 		setTimeout(function () {
 			button.classList.remove(`clicked`);
 		}, 3000);
+
+		const cartItemContainer = document.querySelector(".nav-cart-count");
+		let cartCount = parseFloat(cartItemContainer.innerHTML) + 1;
+		cartItemContainer.innerHTML = cartCount;
 	}
 }

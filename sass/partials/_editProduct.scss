@@ -1,9 +1,14 @@
 .edit-form .buttons {
 	position: relative;
 	margin: 1rem auto 0;
-	width: 60%;
+	width: 100%;
+	height: auto;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+
+	@media only screen and (max-width: 700px) {
+		display: block;
+	}
 
 	button {
 		font-family: $font-primary;
@@ -32,10 +37,6 @@
 
 	#update {
 		background-color: $color-accent;
-	}
-
-	@media only screen and (max-width: 750px) {
-		display: block;
 	}
 }
 

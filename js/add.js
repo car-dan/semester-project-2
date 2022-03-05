@@ -21,6 +21,7 @@ const message = document.querySelector(".message-container");
 const fileInput = document.querySelector("#image");
 const altText = document.querySelector("#altText");
 const featured = document.querySelector(".featured");
+const button = document.querySelector(".add-button");
 
 fileInput.addEventListener("change", renderFile);
 
@@ -60,7 +61,7 @@ function submitForm(e) {
 	) {
 		return displayMessage(
 			"warning",
-			"Please input valid information",
+			"input valid information",
 			".message-container"
 		);
 	}
@@ -73,6 +74,7 @@ function submitForm(e) {
 		file,
 		featuredValue
 	);
+
 }
 
 async function addProduct(title, price, description, altText, file, featured) {
