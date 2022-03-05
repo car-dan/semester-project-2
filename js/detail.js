@@ -1,6 +1,7 @@
 import { baseUrl } from "./settings/api.js";
 import createMenu from "./common/createMenu.js";
 import { addToCart } from "./utils/addToCart.js";
+import displayMessage from "./common/displayMessage.js";
 
 createMenu();
 
@@ -25,6 +26,9 @@ const productUrl = baseUrl + "/products/" + id;
 
 		const container = document.querySelector(".detail-container");
 		const imgUrl = detail.image.formats.small.url;
+		const metaContainer = document.querySelector(`meta[name="description"]`);
+		metaContainer.content = `Read more about ${detail.title} here. Safe shopping`;
+		console.log(metaContainer.content);
 
 		container.innerHTML = `
 							<div class="detail-img">

@@ -16,9 +16,6 @@ function handleClick() {
 	const items = this.dataset.number;
 	const image = this.dataset.image;
 
-	// console.log("id", id);
-	// console.log("name", name);
-
 	const cart = getFromStorage("cart");
 
 	const productExsist = cart.find(function (cart) {

@@ -30,27 +30,32 @@ nav {
 	}
 
 	.main-links {
-		text-align: end;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
 		width: 40%;
 		height: 100%;
-		padding-right: 1rem;
+		margin-right: 1rem;
+
 		color: #f4fff8;
+
+		div {
+			padding: 0.2rem;
+		}
+
+		i {
+			font-size: 1.5rem;
+		}
 
 		a {
 			color: $color-white;
 			text-decoration: none;
 		}
 
-		.user,
-		.logOut {
-			font-size: 0.8rem;
-			padding-bottom: 0.5rem;
-		}
-
 		.nav-cart {
-			font-size: 1.5rem;
-
+			position: relative;
 			span {
+				position: absolute;
 				font-size: 0.8rem;
 				padding: 3px 5px;
 				background-color: $color-accent;

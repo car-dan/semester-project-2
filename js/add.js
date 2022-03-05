@@ -3,7 +3,6 @@ import displayMessage from "./common/displayMessage.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import { renderFile } from "./utils/renderFile.js";
-import { checkSubmit } from "./utils/checkSubmit.js";
 
 const token = getToken();
 
@@ -20,7 +19,7 @@ const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
 const fileInput = document.querySelector("#image");
 const altText = document.querySelector("#altText");
-const featured = document.querySelector(".featured");
+const featured = document.querySelector(".featured-container");
 
 fileInput.addEventListener("change", renderFile);
 

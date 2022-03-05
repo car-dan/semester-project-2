@@ -13,12 +13,11 @@ export default function createMenu() {
 
 	let authLink = `<a href= "login.html"  class = "${
 		pathname === "/login.html" ? "active" : ""
-	}"><i class="fa-solid fa-user"></i>Login</a>`;
+	}"><i class="fa-solid fa-user"></i></a>`;
 
 	if (username) {
 		authLink = "";
-		logOut = `<button id= "logout"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></button>`;
-		user = `Hi ${username}`;
+		logOut = `<button id= "logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>`;
 	}
 
 	mainContainer.innerHTML = `
@@ -42,8 +41,8 @@ export default function createMenu() {
 								<li><a href= "/" class = "${
 									pathname === "/" || pathname === "/index.html" ? "active" : ""
 								}">Home</a></li>
-                            		<li><a href= "products.html"  class = "${
-																	pathname === "/products.html?" ? "active" : ""
+                            		<li><a href="products.html"  class = "${
+																	pathname === "/products.html" ? "active" : ""
 																}">Products</a></li>
 							</ul>
 							

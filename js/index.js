@@ -1,7 +1,7 @@
 import { banner } from "./index/banner.js";
-import { favorites } from "./index/favorites.js";
+import { featureds } from "./index/featureds.js";
 import createMenu from "./common/createMenu.js";
 
 createMenu();
 banner();
-favorites();
+featureds();
