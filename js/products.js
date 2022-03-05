@@ -1,8 +1,9 @@
 import createMenu from "./common/createMenu.js";
 import { baseUrl } from "./settings/api.js";
 import displayMessage from "./common/displayMessage.js";
-import { searchProducts } from "./utils/search.js";
-import { renderProducts } from "./utils/renderProducts.js";
+import { searchProducts } from "./products/search.js";
+import { renderProducts } from "./products/renderProducts.js";
+
 import { addToCart } from "./utils/addToCart.js";
 
 createMenu();

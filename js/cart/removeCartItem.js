@@ -11,10 +11,7 @@ export function removeCartItem(cart) {
 
 function handleClick() {
 	const id = this.dataset.id;
-
-	console.log(id);
 	const cart = getFromStorage("cart");
-	console.log(cart);
 	const newCart = cart.filter((cart) => cart.id !== id);
 
 	saveToStorage("cart", newCart);

@@ -7,7 +7,6 @@ import { checkSubmit } from "../utils/checkSubmit.js";
 
 export async function loadProduct(id) {
 	const loader = document.querySelector(".loader");
-	loader.style.display = "none";
 
 	const productUrl = baseUrl + "/products/" + id;
 	const form = document.querySelector("form");
@@ -34,7 +33,7 @@ export async function loadProduct(id) {
 	} catch (error) {
 		displayMessage("error", "an error ocurred", ".message-container");
 	} finally {
-		loading.style.display = "none";
+		loader.style.display = "none";
 		form.style.display = "block";
 	}
 }

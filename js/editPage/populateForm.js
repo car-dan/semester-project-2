@@ -1,6 +1,4 @@
 export function populateForm(details) {
-	console.log(details);
-
 	const title = document.querySelector("#title");
 	const price = document.querySelector("#price");
 	const description = document.querySelector("#description");

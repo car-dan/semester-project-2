@@ -2,7 +2,6 @@ import { getFromStorage, saveToStorage } from "./storage.js";
 
 export function addToCart(product) {
 	const addButton = document.querySelectorAll(".addCart");
-	console.log(addButton);
 
 	addButton.forEach((button) => {
 		button.addEventListener("click", handleClick);
@@ -15,9 +14,6 @@ function handleClick() {
 	const price = this.dataset.price;
 	const items = this.dataset.number;
 	const image = this.dataset.image;
-
-	// console.log("id", id);
-	// console.log("name", name);
 
 	const cart = getFromStorage("cart");
 

@@ -74,7 +74,6 @@ function submitForm(e) {
 		file,
 		featuredValue
 	);
-
 }
 
 async function addProduct(title, price, description, altText, file, featured) {
@@ -104,7 +103,6 @@ async function addProduct(title, price, description, altText, file, featured) {
 		const json = await respons.json();
 
 		if (json.created_at) {
-			console.log(json);
 			displayMessage("sucsess", "Product created", ".message-container");
 			setTimeout(function () {
 				location.reload();

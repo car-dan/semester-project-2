@@ -13,8 +13,6 @@ export function searchProducts(products) {
 			}
 		});
 
-		console.log(filterProducts);
-
 		renderProducts(filterProducts);
 	};
 }

@@ -27,6 +27,10 @@ nav {
 			max-height: 100%;
 			object-fit: contain;
 		}
+
+		h2 {
+			display: none;
+		}
 	}
 
 	.main-links {
@@ -50,7 +54,6 @@ nav {
 		}
 
 		.nav-cart {
-			font-size: 1.5rem;
 			position: relative;
 
 			span {
@@ -73,9 +76,37 @@ nav {
 			padding: 5px;
 		}
 	}
-	@media only screen and(max-width: 400px) {
+	@media only screen and(max-width: 550px) {
 		.nav-cart-count {
 			letter-spacing: 0;
+		}
+		.logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				display: none;
+			}
+
+			h2 {
+				display: block;
+				color: $color-white;
+				font-family: $font-primary;
+				font-weight: $font-weight-secundary;
+				font-size: 0.8rem;
+			}
+		}
+
+		.main-links {
+			width: 100%;
+			justify-content: flex-start;
+			margin: 0;
+			padding: 0;
+
+			i {
+				font-size: 0.8rem;
+				margin-left: 0rem;
+			}
 		}
 	}
 
@@ -119,12 +150,15 @@ nav {
 		.logo {
 			margin-left: 35%;
 			transform: translate(-35%);
-			width: 100%;
+			min-width: 100px;
+			width: 90%;
 			height: 100%;
+			text-align: center;
 
 			img {
-				height: 100%;
-				width: 100%;
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
 			}
 		}
 	}

@@ -44,8 +44,6 @@ async function doLogin(username, password) {
 		const respons = await fetch(url, options);
 		const json = await respons.json();
 
-		console.log(json);
-
 		if (json.user) {
 			displayMessage("sucsess", "Logged in", ".message-container");
 

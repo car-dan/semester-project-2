@@ -1,10 +1,8 @@
-import { getUserName } from "./storage.js";
+import { getUserName } from "../utils/storage.js";
 
 export function renderProducts(products) {
 	const container = document.querySelector(".products");
 	const username = getUserName();
-
-	console.log(products);
 
 	let authLink = "detail.html?id=";
 
