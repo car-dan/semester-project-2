@@ -38,11 +38,20 @@ nav {
 }
 
 .main-nav .main-links {
-  text-align: end;
   width: 40%;
   height: 100%;
   padding-right: 1rem;
   color: #f4fff8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1rem;
 }
 
 .main-nav .main-links a {
@@ -50,24 +59,25 @@ nav {
   text-decoration: none;
 }
 
-.main-nav .main-links .user,
-.main-nav .main-links .logOut {
-  font-size: 0.8rem;
-  padding-bottom: 0.5rem;
+.main-nav .main-links i {
+  font-size: 1.2rem;
+  margin-left: 1rem;
 }
 
 .main-nav .main-links .nav-cart {
   font-size: 1.5rem;
+  position: relative;
 }
 
 .main-nav .main-links .nav-cart span {
+  position: absolute;
   font-size: 0.8rem;
   padding: 3px 5px;
   background-color: #a33b20;
   border-radius: 50%;
   color: #fffbfe;
   vertical-align: top;
-  margin-left: -15px;
+  margin-left: -5px;
 }
 
 .main-nav .main-links button {

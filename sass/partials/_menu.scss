@@ -30,34 +30,38 @@ nav {
 	}
 
 	.main-links {
-		text-align: end;
 		width: 40%;
 		height: 100%;
 		padding-right: 1rem;
 		color: #f4fff8;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-right: 1rem;
 
 		a {
 			color: $color-white;
 			text-decoration: none;
 		}
 
-		.user,
-		.logOut {
-			font-size: 0.8rem;
-			padding-bottom: 0.5rem;
+		i {
+			font-size: 1.2rem;
+			margin-left: 1rem;
 		}
 
 		.nav-cart {
 			font-size: 1.5rem;
+			position: relative;
 
 			span {
+				position: absolute;
 				font-size: 0.8rem;
 				padding: 3px 5px;
 				background-color: $color-accent;
 				border-radius: 50%;
 				color: $color-white;
 				vertical-align: top;
-				margin-left: -15px;
+				margin-left: -5px;
 			}
 		}
 

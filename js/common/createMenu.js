@@ -13,18 +13,17 @@ export default function createMenu() {
 
 	let authLink = `<a href= "login.html"  class = "${
 		pathname === "/login.html" ? "active" : ""
-	}"><i class="fa-solid fa-user"></i>Login</a>`;
+	}"><i class="fa-solid fa-user"></i></a>`;
 
 	if (username) {
 		authLink = "";
-		logOut = `<button id= "logout"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></button>`;
+		logOut = `<button id= "logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>`;
 		user = `Hi ${username}`;
 	}
 
 	mainContainer.innerHTML = `
 								<div class="user">
 									${authLink}
-									<p class="userName">${user}</p>
 								</div>
 								<div class="logOut"> ${logOut}</div>
 								<div class="nav-cart">
