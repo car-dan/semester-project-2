@@ -261,7 +261,7 @@ nav {
 
 @media only screen and (max-width: 768px) {
   .container {
-    margin-top: -12vh;
+    margin-top: -5vh;
   }
 }
 
@@ -410,7 +410,7 @@ nav {
 
 @media only screen and (max-width: 768px) {
   .products-container {
-    margin: -10vh auto 5vh;
+    margin: -5vh auto 5vh;
   }
 }
 
@@ -575,7 +575,7 @@ nav {
 
 @media only screen and (max-width: 768px) {
   .detail-container {
-    margin: -10vh auto 5vh;
+    margin: -5vh auto 5vh;
   }
 }
 
@@ -736,7 +736,7 @@ nav {
 
 @media only screen and (max-width: 768px) {
   .cart {
-    margin: -10vh auto 5vh;
+    margin: -5vh auto 5vh;
   }
 }
 
@@ -1002,13 +1002,13 @@ footer {
 }
 
 .container {
-  min-height: 40vh;
+  min-height: 45vh;
 }
 
 .logInForm,
 .edit-form,
 .add-form {
-  margin: 40px auto;
+  margin: 10vh auto;
   width: 80%;
   font-size: 16px;
   background: #889696;

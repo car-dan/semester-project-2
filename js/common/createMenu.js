@@ -43,7 +43,7 @@ export default function createMenu() {
 									pathname === "/" || pathname === "/index.html" ? "active" : ""
 								}">Home</a></li>
                             		<li><a href= "products.html"  class = "${
-																	pathname === "/products.html?" ? "active" : ""
+																	pathname === "/products.html" ? "active" : ""
 																}">Products</a></li>
 							</ul>
 							
