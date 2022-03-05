@@ -306,7 +306,7 @@ nav {
 
 .container {
   width: 100%;
-  margin: 5vh auto;
+  margin: 10vh auto;
 }
 
 @media only screen and (max-width: 768px) {
