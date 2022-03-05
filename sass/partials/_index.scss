@@ -3,7 +3,7 @@
 	margin: 5vh auto;
 
 	@media only screen and (max-width: 768px) {
-		margin-top: -8vh;
+		margin-top: -12vh;
 	}
 }
 .banner-container {
@@ -22,7 +22,7 @@
 
 .product-container {
 	width: 100%;
-	margin: 5vh auto;
+	margin: 10vh auto;
 	text-align: center;
 
 	h1 {
@@ -30,23 +30,22 @@
 		margin-bottom: 1rem;
 	}
 
-	.featureds-container {
+	.favorites-container {
 		display: flex;
 		flex-wrap: wrap;
 		width: 90%;
 		margin: 0 auto;
 	}
 
-	.featured-container {
+	.favorite {
 		margin: 1rem;
-		border-radius: 5px;
 		background-color: transparent;
 		width: 100%;
 		height: 200px;
 		border: none;
 		perspective: 1000px;
-		box-shadow: 0 4px 8px 0 rgba($color: $color-primary, $alpha: 0.5),
-			0 6px 20px 0 rgba($color: $color-primary, $alpha: 0.5);
+		box-shadow: 0 4px 8px 0 rgba($color: $color-navbar, $alpha: 0.5),
+			0 6px 20px 0 rgba($color: $color-navbar, $alpha: 0.5);
 
 		@media only screen and (min-width: 550px) {
 			height: 300px;
@@ -63,30 +62,27 @@
 		}
 	}
 
-	.featured-inner {
+	.favorite-inner {
 		position: relative;
 		width: 100%;
 		height: 100%;
 		text-align: center;
 		transition: transform 1.2s;
 		transform-style: preserve-3d;
-		border-radius: 5px;
 
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 5px;
 		}
 	}
 
-	.featured-container:hover .featured-inner {
+	.favorite:hover .favorite-inner {
 		transform: rotateX(180deg);
 	}
 
-	.featured-front,
-	.featured-back {
-		border-radius: 5px;
+	.favorite-front,
+	.favorite-back {
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -94,12 +90,12 @@
 		backface-visibility: hidden;
 	}
 
-	.featured-front {
+	.favorite-front {
 		background-color: $color-navbar;
 		color: $color-white;
 	}
 
-	.featured-back {
+	.favorite-back {
 		text-transform: capitalize;
 		background-color: $color-navbar;
 		color: $color-white;

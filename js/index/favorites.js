@@ -4,8 +4,8 @@ import { getUserName } from "../utils/storage.js";
 
 const productsUrl = baseUrl + "/" + "products";
 
-export async function featureds() {
-	const container = document.querySelector(".featureds-container");
+export async function favorites() {
+	const container = document.querySelector(".favorites-container");
 
 	const loader = document.querySelector(".loader");
 
@@ -23,25 +23,25 @@ export async function featureds() {
 			authLink = "edit.html?id=";
 		}
 
-		json.forEach(function (featured) {
-			if (featured.featured) {
+		json.forEach(function (favorite) {
+			if (favorite.featured) {
 				let imgUrl;
-				if (featured.image) {
-					imgUrl = featured.image.formats.small.url;
+				if (favorite.image) {
+					imgUrl = favorite.image.formats.small.url;
 				} else {
 					imgUrl = "";
 				}
 
 				container.innerHTML += `
-				<div class="featured-container">
-					<a href="${authLink}${featured.id}" class="btn btn-primary">
-						<div class="featured-inner">
-							<div class="featured-front">
+				<div class="favorite">
+					<a href="${authLink}${favorite.id}" class="btn btn-primary">
+						<div class="favorite-inner">
+							<div class="favorite-front">
 								<img src="${imgUrl}" class="card-img-top" alt="">
 							</div>
-							<div class="featured-back">
-								<h5 class="card-title">${featured.title}</h5>
-    							<p class="card-text">${featured.price},-</p>
+							<div class="favorite-back">
+								<h5 class="card-title">${favorite.title}</h5>
+    							<p class="card-text">${favorite.price},-</p>
 							</div>
 						</div>
 					</a>

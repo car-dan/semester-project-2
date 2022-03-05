@@ -1,35 +1,25 @@
-@import "partials/variables";
+@import "partials/div";
 @import "partials/menu";
-@import "partials/footer";
-@import "partials/loader";
-@import "partials/message";
+@import "partials/custom";
 @import "partials/index";
+@import "partials/image";
+
 @import "partials/products";
 @import "partials/details";
 @import "partials/cart";
-@import "partials/form";
+// @import "partials/logIn";
 @import "partials/editProduct";
+@import "partials/footer";
+@import "partials/form";
+@import "partials/message";
+@import "partials/loader";
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
+	//font-family: mrs-eaves-roman-petite-caps, sans-serif;
+	// font-weight: $color-background;
+	// background-color: $color-white;
 	letter-spacing: 0.1rem;
-}
-
-body {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: $color-white;
-	color: $color-primary;
-	font-family: $font-secondary;
-	font-weight: $font-weight-secundary;
-}
-
-h1 {
-	font-family: $font-primary;
-	font-weight: $font-weight-secundary;
-	font-size: 2.5rem;
 }
