@@ -31,7 +31,7 @@
 git clone git@github.com:car-dan/semester-project-2.git
 ```</li>
  </ol>
-## Contact
+ <h2>Contact</h2>
 
 
 [My LinkedIn page](www.linkedin.com)
