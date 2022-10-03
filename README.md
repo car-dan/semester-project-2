@@ -6,7 +6,7 @@
 <p>The project is a webshop with a strapi backend hosted on Heroku</p>
 
 <h2>Description</h2>
-<p>The project is created with Html, JS and SASSs</p>
+<p>The project is created with Html, JS and SASS</p>
 <p>The project uses a Strapi database hosted through Heroku to store images and product data</p>
 <ul>
  <li>It has a homepage that displays a banner image and featured products</li>
@@ -16,5 +16,24 @@
  <li>The shopping cart uses local storage to store and render products that the customer adds to or removes from the cart.</li>
 </ul>
 
-<p>If you want to try the project, you can simply use your own or a public API and edit the API calls to use them for other products.</p>
+<h2>Built with</h2>
+<ul>
+ <li>Htlm</li>
+ <li>Javascript</li>
+ <li>Sass</li>
+ </ul>
+ 
+ <h2>Getting Started</h2>
+ <p>Clone the repo and change out the baseurl and API calls to fit your API</p>
+ <ol>
+ <li>Clone the repo: 
+ ```bash
+git clone git@github.com:car-dan/semester-project-2.git
+```</li>
+ </ol>
+## Contact
+
+
+[My LinkedIn page](www.linkedin.com)
+
 
