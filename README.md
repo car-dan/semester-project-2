@@ -18,7 +18,7 @@
 
 <h2>Built with</h2>
 <ul>
- <li>Htlm</li>
+ <li>Html</li>
  <li>Javascript</li>
  <li>Sass</li>
  </ul>
